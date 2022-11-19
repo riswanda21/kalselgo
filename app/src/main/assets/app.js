@@ -1,4 +1,5 @@
 route('/', 'home.html');
+route('/kesehatan', 'kesehatan.html');
 function main() {
     let parsedata = new Http();
     let app = new App();
