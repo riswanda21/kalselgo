@@ -1,8 +1,6 @@
 <div class="mx-auto max-w-[450px]">
     <div class="h-full bg-gray-50">
-      <div class="rounded-b-xl bg-red-600 p-5 pb-44 text-white" style="background-position: center;
-      background-repeat: no-repeat;
-     background-size: cover;background-image:url('https://www.kibrispdr.org/data/51/daftar-dokter-rumah-sakit-ulin-banjarmasin-43.jpg')">
+      <div class="rounded-b-2xl h-60 bg-red-700 p-5 pb-44 text-white">
         <div class="mb-4 flex items-center justify-between">
           <div onclick="history.back()" class="rounded-lg bg-indigo-50/30 p-3 hover:bg-white hover:text-indigo-500">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -15,15 +13,14 @@
           </div>
         </div>
         <div class="space-y-2 text-center">
-          
-          
-          <div class="text-slate-200">Rumah Sakit di Kalimantan Selatan</div>
+     
+         
         </div>
       </div>
       <div x-data="startSearch()" x-init="fetchRumahSakit()">
       <div class="-mt-40 p-5">
           <div class="rounded-xl bg-white p-4 font-medium text-slate-500 shadow-sm">
-            <div class="mb-3 text-sm">Kabupaten</div>
+            <div class="mb-3 text-sm">Cari Rumah Sakit</div>
             
               <select name="dataSearch" x-model="dataSearch" class="form-select appearance-none
           block
@@ -55,7 +52,7 @@
             <option value="6310">Kab. Tanah Bumbu</option>
             <option value="6311">Kab. Balangan</option>
         </select><br>
-            <button  @click="fetchRumahSakit()" class="flex w-full items-center justify-center rounded-lg bg-green-700 py-4 px-5 font-medium tracking-wide text-white text-opacity-90 shadow-slate-100 hover:shadow-lg">
+            <button  @click="fetchRumahSakit()" class="flex w-full items-center justify-center rounded-lg bg-red-600 py-4 px-5 font-medium tracking-wide text-white text-opacity-90 shadow-slate-100 hover:shadow-lg">
               <span class="mr-2">Cari</span>
               
             </button><br>
@@ -69,13 +66,13 @@
         </div>
         <div class="space-y-2">
           <template x-for="abilityObj in dataRumahSakit.hospitals" :key="abilityObj.id">
-          <div  class="flex space-x-3 rounded-xl bg-white p-3 shadow-sm">
+          <div  class="flex space-x-3 rounded-b-2xl bg-white p-3 shadow-sm">
             
             <div>
               <h3 x-text="abilityObj.name" class="font-semibold text-gray-600"></h3>
               <p x-text="abilityObj.address" class="text-sm text-slate-400"></p>
               <template x-for="kamar in abilityObj.available_beds" :key="kamar.available">
-                <p style="font-size:12px;" class="inline-block py-1 px-2 leading-none text-center whitespace-nowrap align-baseline font-bold bg-green-700 text-white rounded">Tersedia <span x-text="kamar.available"></span> Kamar</p>
+                <p style="font-size:12px;" class="inline-block py-1 px-2 leading-none text-center whitespace-nowrap align-baseline font-bold bg-red-700 text-white rounded">Tersedia <span x-text="kamar.available"></span> Kamar</p>
               </template>
             </div>
             
