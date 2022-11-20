@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
+import android.webkit.WebSettings;
 import android.webkit.WebViewClient;
 import android.webkit.WebChromeClient;
 import android.net.Uri;
@@ -33,7 +34,7 @@ public class MainActivity extends Activity {
 		webView.getSettings().setAllowFileAccess(true);
 		webView.getSettings().setAllowContentAccess(true);
 		webView.getSettings().setDatabaseEnabled(true);
-		
+		webView.getSettings().setRenderPriority(WebSettings.RenderPriority.HIGH);
 		webView.setWebChromeClient(new WebChromeClient());
 		webView.setWebViewClient(new WebViewClient() {
 			@Override
