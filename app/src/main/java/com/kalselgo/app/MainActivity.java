@@ -34,7 +34,9 @@ public class MainActivity extends Activity {
 		webView.getSettings().setAllowFileAccess(true);
 		webView.getSettings().setAllowContentAccess(true);
 		webView.getSettings().setDatabaseEnabled(true);
+		if (Build.VERSION.SDK_INT < 18) {
 		webView.getSettings().setRenderPriority(WebSettings.RenderPriority.HIGH);
+		}
 		webView.setWebChromeClient(new WebChromeClient());
 		webView.setWebViewClient(new WebViewClient() {
 			@Override
