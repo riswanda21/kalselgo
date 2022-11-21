@@ -68,13 +68,11 @@
           <template x-for="abilityObj in dataRumahSakit.hospitals" :key="abilityObj.id">
             <a x-bind:href="'#/kesehatan/' + abilityObj.id">
           <div  class="flex space-x-3 rounded-b-2xl bg-white p-3 shadow-sm">
-            
+            <img x-bind:src="'assets/img/rumah-sakit/' + abilityObj.id + '.jpg'" onerror="this.onerror=null; this.src='assets/img/rumah-sakit/default.jpg';return false;" alt="Just a flower" style="width:50px;height:50px;" class="w-16  object-cover  h-16 rounded-xl">
             <div>
               <h3 x-text="abilityObj.name" class="font-semibold text-gray-600"></h3>
               <p x-text="abilityObj.address" class="text-sm text-slate-400"></p>
-              <template x-for="kamar in abilityObj.available_beds" :key="kamar.available">
-                <p style="font-size:12px;" class="inline-block py-1 px-2 leading-none text-center whitespace-nowrap align-baseline font-bold bg-green-700 text-white rounded">Lihat ketersediaan kamar</p>
-              </template>
+              <p x-text="abilityObj.phone" class="text-sm text-slate-400"></p>
             </div>
             
           </div></a>
