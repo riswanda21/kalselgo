@@ -1,6 +1,7 @@
 route('/', 'home.html');
 route('/kesehatan', 'kesehatan.html');
 route('/wisata-view', 'wisata-view.html');
+var parameter = location.hash.split("/");
 function main() {
     let parsedata = new Http();
     let app = new App();
@@ -41,6 +42,5 @@ function startSearch() {
           });
       },
     };
-  }
-  
+  }  
 ready(main);

@@ -15,9 +15,9 @@
                       </div>
                 </div>
             </div>
-             <div x-data="getHospitalDetails()" x-init="fetchRumahSakit1()">
-          <img src="https://cdn.pixabay.com/photo/2021/09/17/21/55/hospital-bed-6633778__340.png" width="100%" alt="">
+          <div x-data="getHospitalDetails()" x-init="fetchRumahSakit1()">
           <template x-if="dataRumahSakit1.data">
+            <img id="imgHospital" x-bind:src="'assets/img/rumah-sakit/' + dataRumahSakit1.data.id + '.jpg'" onerror="this.onerror=null; this.src='https://pic.pikbest.com/01/98/05/13b888piCxeQ.jpg!bw700';return false;" style="height:300px;" width="100%" alt="">
           <div class="p-5 -mt-8 rounded-2xl bg-white relative">
             <div class="flex flex-row items-center space-x-1">
                 <p x-text="dataRumahSakit1.data.name" class="font-bold text-xl"></p>
