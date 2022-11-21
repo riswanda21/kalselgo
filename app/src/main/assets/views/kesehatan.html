@@ -66,6 +66,7 @@
         </div>
         <div class="space-y-2">
           <template x-for="abilityObj in dataRumahSakit.hospitals" :key="abilityObj.id">
+            <a x-bind:href="'#/kesehatan/' + abilityObj.id">
           <div  class="flex space-x-3 rounded-b-2xl bg-white p-3 shadow-sm">
             
             <div>
@@ -76,7 +77,7 @@
               </template>
             </div>
             
-          </div>
+          </div></a>
       </template>
       </section>
   
