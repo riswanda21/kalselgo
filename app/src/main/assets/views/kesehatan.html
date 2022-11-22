@@ -18,7 +18,7 @@
          
         </div>
       </div>
-      <div x-data="startSearch()" x-init="fetchRumahSakit()">
+      <div x-data="startSearch()">
       <div class="-mt-40 p-5">
           <div class="rounded-xl bg-white p-4 font-medium text-slate-500 shadow-sm">
             <div class="mb-3 text-sm">Cari Rumah Sakit</div>
@@ -38,7 +38,7 @@
           ease-in-out
           m-0
           focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select example">
-            <option selected="">Pilih Kabupaten</option>
+            <option selected="" value="0">Pilih Kabupaten</option>
             <option value="6372">Kota Banjarbaru</option>
             <option value="6371">Kota Banjarmasin</option>
             <option value="6303">Kab. Banjar</option>
@@ -53,17 +53,16 @@
             <option value="6310">Kab. Tanah Bumbu</option>
             <option value="6311">Kab. Balangan</option>
         </select><br>
-            <button  @click="fetchRumahSakit()" class="flex w-full items-center justify-center rounded-lg bg-green-600 py-4 px-5 font-medium tracking-wide text-white text-opacity-90 shadow-slate-100 hover:shadow-lg">
+            <button @click="fetchRumahSakit()" class="flex w-full items-center justify-center rounded-lg bg-green-600 py-4 px-5 font-medium tracking-wide text-white text-opacity-90 shadow-slate-100 hover:shadow-lg" :class="[ 'hover:bg-green-800' ]">
               <span class="mr-2">Cari</span>
               
             </button><br>
           </div>
         </div>
   
-      <section  class="p-5">
-        <div class="mb-5 flex items-center justify-between">
+      <section class="p-5">
+        <div x-show="open" class="mb-5 flex items-center justify-between">
           <h4 class="font-medium text-slate-500">Rumah Sakit</h4>
-          
         </div>
         <div class="space-y-2">
           <template x-for="rumahsakit in dataRumahSakit.hospitals" :key="rumahsakit.id">

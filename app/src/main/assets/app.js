@@ -43,14 +43,17 @@ function getDestinasiWisata() {
 }
 function startSearch() {
     return {
-      dataSearch: "6372",
+      dataSearch: null,
       dataRumahSakit: null,
+      open: false,
       isLoading: false,
       fetchRumahSakit() {
         this.isLoading = true;
+        this.open = true;
         fetch(`https://rs-bed-covid-api.vercel.app/api/get-hospitals?provinceid=63prop&cityid=${this.dataSearch}&type=2`)
           .then((res) => res.json())
           .then((data) => {
+            this.open = true;
             this.isLoading = false;
             this.dataRumahSakit = data;
           });
