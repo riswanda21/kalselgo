@@ -19,14 +19,14 @@ background-size: cover;background-image:url('assets/img/header.jpg')">
       <img src="assets/img/logo2.png" width="150px">
       <div class="flex justify-between items-center ">
         <div class="flex flex-col">
-          <h2 style="margin-left:10px;" class="text-sm flex items-center text-gray-100 font-normal"> &nbsp;Eksplorasi Kalsel dalam genggaman. </h2>
+          <h2 style="margin-left:10px;" class="text-sm flex items-center text-gray-100 font-normal"> Eksplorasi Kalsel dalam genggaman. </h2>
         </div>
       </div>
       <br>
     </div>
   </div>
   <div class=" p-3 space-y-4 z-0">
-    <h4 class="font-semibold mt-2">Pusat Layanan & Informasi</h4>
+    <h4 class="font-semibold mt-2">Pusat Layanan</h4>
     <div class="flex items-center justify-between overflow-y-scroll text-gray-500 space-x-3">
       <div class="flex flex-col items-center justify-center w-30  h-20  bg-green-200 rounded-2xl text-green-600 shadow hover:shadow-md cursor-pointer mb-2 p-1 bg-white transition ease-in duration-300">
         <i class="far fa-building"></i>
@@ -46,6 +46,30 @@ background-size: cover;background-image:url('assets/img/header.jpg')">
         <i class="far fa-comments"></i>
         <p class="text-sm mt-1">Pengaduan</p>
       </div>
+    </div>
+    <h4 class="font-semibold mt-2">Informasi & Publik</h4>
+    <div class="flex items-center justify-between overflow-y-scroll text-gray-500 space-x-3">
+      <div class="flex flex-col items-center justify-center w-30  h-20  bg-green-200 rounded-2xl text-green-600 shadow hover:shadow-md cursor-pointer mb-2 p-1 bg-white transition ease-in duration-300">
+        <i class="far fa-umbrella-beach"></i>
+        <p class="text-sm text-center mt-1">Destinasi Wisata</p>
+      </div>
+      <a href="">
+        <div class="flex flex-col items-center justify-center w-30  h-20  bg-green-200   rounded-2xl text-green-600 shadow hover:shadow-md cursor-pointer mb-2 p-1 bg-white transition ease-in duration-300">
+          <i class="far fa-utensils"></i>
+          <p class="text-sm text-center mt-1">Cafe & Resto</p>
+        </div>
+      </a>
+      <a href="#/pangan">
+        <div class="flex flex-col items-center justify-center w-30  h-20  bg-green-200   rounded-2xl text-green-600 shadow hover:shadow-md cursor-pointer mb-2 p-1 bg-white transition ease-in duration-300">
+          <i class="far fa-store"></i>
+          <p class="text-sm text-center mt-1">Harga Pangan</p>
+        </div>
+      </a>
+      <div class="flex flex-col items-center justify-center w-30  h-20  bg-green-200 rounded-2xl text-green-600 shadow hover:shadow-md cursor-pointer mb-2 p-1 bg-white transition ease-in duration-300">
+        <i class="far fa-briefcase"></i>
+        <p class="text-sm text-center mt-1">Informasi Loker</p>
+      </div>
+     
     </div>
     <h4 class="font-semibold">Destinasi Wisata</h4>
     <div class="grid m-0  grid-cols-2  space-x-4 overflow-y-scroll flex justify-center items-center w-full ">
@@ -118,7 +142,7 @@ background-size: cover;background-image:url('assets/img/header.jpg')">
       <div x-data="getDestinasiWisata()" x-init="fetchWisata()" class="">
         <template x-for="wisata in dataWisata.wisata" :key="wisata.id">
         <div class="flex  bg-white shadow-md  rounded-2xl p-2">
-          <img x-bind:src="wisata.img" style="width:25%;height:50px;" class=" w-16  object-cover  h-16 rounded-xl">
+          <img x-bind:src="wisata.img" class=" w-16  object-cover  h-16 rounded-xl">
           <div class="flex flex-col justify-center w-full px-2 py-1">
             <div class="flex justify-between items-center ">
               <div class="flex flex-col">

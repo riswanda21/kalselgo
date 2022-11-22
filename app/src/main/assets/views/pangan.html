@@ -1,0 +1,46 @@
+<div class="mx-auto max-w-[450px]">
+    <div class="h-full bg-gray-50">
+      <div class="rounded-b-2xl h-10 bg-green-700 p-5 pb-14 text-white">
+        <div class="mb-4 flex items-center justify-between">
+          <div onclick="history.back()" class="rounded-lg bg-indigo-50/30 p-3 hover:bg-white hover:text-indigo-500">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </div>
+          <img src="assets/img/logo.png" width="150px">
+          <div class="rounded-lg bg-indigo-50/30 p-2 hover:bg-white hover:text-indigo-500">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z"></path>
+            </svg></div>
+        </div>
+        <div class="space-y-2 text-center">
+     
+         
+        </div>
+      </div>
+      <div x-data="getHargaPangan()" x-init="fetchPangan()">
+      <div class="">
+                        
+  
+      <section  class="p-5">
+        <div class="mb-5 flex items-center justify-between">
+          <h4 class="font-medium text-slate-500">Harga Pangan</h4>
+        </div>
+        <div class="space-y-2">
+          <template x-for="rumahsakit in dataPangan.harga_pangan">
+            <a x-bind:href="'#/kesehatan/' + rumahsakit.id">
+          <div  class="flex space-x-3 rounded-b-2xl bg-white p-3 shadow-sm">
+            <img x-bind:src="'assets/img/pangan/' + rumahsakit.id + '.jpg'" alt="Just a flower" style="width:50px;height:50px;" class="w-16  object-cover  h-16 rounded-xl">
+            <div>
+              <h3 x-text="rumahsakit.nama" class="font-semibold text-gray-600"></h3>
+              <p class="text-sm text-slate-400"><span x-text="rumahsakit.display"></span>/kg</p>
+            </div>
+            
+          </div></a>
+      </template>
+      </section>
+  
+     
+    </div>
+    </div>
+  </div>

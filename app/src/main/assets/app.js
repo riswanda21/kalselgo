@@ -1,5 +1,6 @@
 route('/', 'home.html');
 route('/kesehatan', 'kesehatan.html');
+route('/pangan', 'pangan.html');
 route('/wisata-view', 'wisata-view.html');
 var parameter = location.hash.split("/");
 function main() {
@@ -9,6 +10,21 @@ function main() {
     if(parameter[1] == "kesehatan" && parameter[2]) {
       parsedata.get('view','views/kesehatan-view.html');
     }
+}
+function getHargaPangan() {
+  return {
+    dataPangan: null,
+    isLoading: false,
+    fetchPangan() {
+      this.isLoading = true;
+      fetch(`https://api.npoint.io/7bf1b4ab6559c253b1e8`)
+        .then((res) => res.json())
+        .then((data) => {
+          this.isLoading = false;
+          this.dataPangan = data;
+        });
+    },
+  };
 }
 function getDestinasiWisata() {
   return {
