@@ -61,9 +61,7 @@
         </div>
   
       <section class="p-5">
-        <div x-show="open" class="mb-5 flex items-center justify-between">
-          <h4 class="font-medium text-slate-500">Rumah Sakit</h4>
-        </div>
+        
         <div class="space-y-2">
           <template x-for="rumahsakit in dataRumahSakit.hospitals" :key="rumahsakit.id">
             <a x-bind:href="'#/kesehatan/' + rumahsakit.id">
