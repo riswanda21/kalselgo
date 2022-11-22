@@ -10,6 +10,21 @@ function main() {
       parsedata.get('view','views/kesehatan-view.html');
     }
 }
+function getDestinasiWisata() {
+  return {
+    dataWisata: null,
+    isLoading: false,
+    fetchWisata() {
+      this.isLoading = true;
+      fetch(`https://api.npoint.io/23ec7b17de445201a198`)
+        .then((res) => res.json())
+        .then((data) => {
+          this.isLoading = false;
+          this.dataWisata = data;
+        });
+    },
+  };
+}
 function startSearch() {
     return {
       dataSearch: "6372",
