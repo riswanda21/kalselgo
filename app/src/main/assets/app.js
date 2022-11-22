@@ -1,6 +1,7 @@
 route('/', 'home.html');
 route('/kesehatan', 'kesehatan.html');
 route('/pangan', 'pangan.html');
+route('/wisata', 'wisata.html');
 route('/wisata-view', 'wisata-view.html');
 var parameter = location.hash.split("/");
 function main() {
@@ -28,6 +29,22 @@ function getHargaPangan() {
 }
 function getDestinasiWisata() {
   return {
+    dataWisata: null,
+    isLoading: false,
+    fetchWisata() {
+      this.isLoading = true;
+      fetch(`https://api.npoint.io/23ec7b17de445201a198`)
+        .then((res) => res.json())
+        .then((data) => {
+          this.isLoading = false;
+          this.dataWisata = data;
+        });
+    },
+  };
+}
+function getDestinasiWisata1() {
+  return {
+    dataSearch: "",
     dataWisata: null,
     isLoading: false,
     fetchWisata() {
