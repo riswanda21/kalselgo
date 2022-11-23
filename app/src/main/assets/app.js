@@ -55,8 +55,20 @@ function getDestinasiWisata1() {
         .then((res) => res.json())
         .then((data) => {
           this.isLoading = false;
-          this.dataWisata = data;
+          var data2 = data;
+            var filter = this.dataSearch;
+            if(filter) {
+              for (var i = 0; i < data2.wisata.length; i++){
+                if (data2.wisata[i].location == filter){
+                  var datanya = data2.wisata[i];
+                }
+              }
+              this.dataWisata = {"status":200, "wisata":[datanya]};
+              }else{
+                //this.dataWisata = data;
+              }
         });
+      
     },
   };
 }
