@@ -15,10 +15,11 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
-        android:theme="@android:style/Theme.NoTitleBar"
+        android:theme="@android:style/Theme.Translucent.NoTitleBar"
         android:usesCleartextTraffic="true" >
         <activity
             android:name=".MainActivity"
+			android:theme="@style/Activity.Fullscreen.Theme"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
