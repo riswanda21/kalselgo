@@ -67,6 +67,7 @@ function getDestinasiWisata1() {
         open: false,
         open_data: true,
         fetchWisata() {
+            open_data: true;
             this.isLoading = true;
             fetch(`https://api.npoint.io/23ec7b17de445201a198`)
                 .then((res) => res.json())
