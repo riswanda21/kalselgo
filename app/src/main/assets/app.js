@@ -64,6 +64,7 @@ function getDestinasiWisata1() {
         dataSearch: wisata_param.replace(/%20/g, " "),
         dataWisata: null,
         isLoading: false,
+        open: false,
         fetchWisata() {
             this.isLoading = true;
             fetch(`https://api.npoint.io/23ec7b17de445201a198`)
