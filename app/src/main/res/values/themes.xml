@@ -19,8 +19,5 @@
 	<item name="android:statusBarColor" tools:targetApi="l">@android:color/transparent</item>
 	<item name="android:enforceStatusBarContrast"  tools:targetApi="q">false</item>
 	<item name="android:enforceNavigationBarContrast"  tools:targetApi="q">false</item>
-    <item name="spinnerStyle">@android:style/Widget.Spinner</item>
-    <item name="spinnerDropDownItemStyle">@android:style/Widget.DropDownItem.Spinner</item>
-    <item name="spinnerItemStyle">@android:style/Widget.TextView.SpinnerItem</item>
 	</style>
 </resources>
