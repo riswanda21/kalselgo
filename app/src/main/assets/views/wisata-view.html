@@ -3,14 +3,18 @@
     <div class="flex flex-col relative">
       <div class="absolute">
         <br><br>
+        <div x-data="getWisataDetails()" x-init="fetchWisataDetails()">
+          <template x-if="dataWisataDetails.wisata">
         <div class="flex flex-row justify-between px-4">
-          <div onclick="history.back()" class="text-white hover:text-indigo-500">
+          <a x-bind:href="'#/wisata/' + dataWisataDetails.wisata[idnya].location">
+          <div class="text-white hover:text-indigo-500">
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <polyline points="15 18 9 12 15 6"></polyline>
             </svg>
-          </div>
+          </div></a>
           <div class="flex flex-row space-x-2"></div>
         </div>
+        </template></div>
       </div>
       <div x-data="getWisataDetails()" x-init="fetchWisataDetails()">
         <template x-if="dataWisataDetails.wisata">

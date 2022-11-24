@@ -3,15 +3,20 @@ route('/kesehatan', 'kesehatan.html');
 route('/pangan', 'pangan.html');
 route('/wisata', 'wisata.html');
 var parameter = location.hash.split("/");
-
 function main() {
     let parsedata = new Http();
     let app = new App();
     var parameter = location.hash.split("/");
     if (parameter[1] == "kesehatan" && parameter[2]) {
+        parsedata.get('view', 'views/kesehatan.html');
+    }
+    if (parameter[1] == "kesehatan-details" && parameter[2]) {
         parsedata.get('view', 'views/kesehatan-view.html');
     }
     if (parameter[1] == "wisata" && parameter[2]) {
+        parsedata.get('view', 'views/wisata.html');
+    }
+    if (parameter[1] == "wisata-details" && parameter[2]) {
         parsedata.get('view', 'views/wisata-view.html');
     }
 }
@@ -49,8 +54,14 @@ function getDestinasiWisata() {
 }
 
 function getDestinasiWisata1() {
+    var parameter = location.hash.split("/");
+    if(parameter[2]) {
+        var wisata_param = parameter[2];
+    }else{
+        var wisata_param = "";
+    }
     return {
-        dataSearch: "",
+        dataSearch: wisata_param.replace(/%20/g, " "),
         dataWisata: null,
         isLoading: false,
         fetchWisata() {
@@ -82,9 +93,15 @@ function getDestinasiWisata1() {
     };
 }
 
-function startSearch() {
+function getRumahSakit() {
+    var parameter = location.hash.split("/");
+    if(parameter[2]) {
+        var rs_param = parameter[2];
+    }else{
+        var rs_param = "";
+    }
     return {
-        dataSearch: null,
+        dataSearch: rs_param,
         dataRumahSakit: null,
         open: false,
         isLoading: false,
