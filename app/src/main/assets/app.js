@@ -67,7 +67,7 @@ function getDestinasiWisata1() {
         open: false,
         open_data: true,
         fetchWisata() {
-            open_data: true;
+            this.open_data = true;
             this.isLoading = true;
             fetch(`https://api.npoint.io/23ec7b17de445201a198`)
                 .then((res) => res.json())
@@ -103,18 +103,24 @@ function getRumahSakit() {
     }else{
         var rs_param = "";
     }
+    if(parameter[3]) {
+        var nm_param = parameter[3].replace(/%20/g, " ");
+    }else{
+        var nm_param = "";
+    }
     return {
+        dataName: nm_param,
         dataSearch: rs_param,
         dataRumahSakit: null,
         open: false,
         isLoading: false,
+        open_data: true,
         fetchRumahSakit() {
+            this.open_data = true;
             this.isLoading = true;
-            this.open = true;
             fetch(`https://rs-bed-covid-api.vercel.app/api/get-hospitals?provinceid=63prop&cityid=${this.dataSearch}&type=2`)
                 .then((res) => res.json())
                 .then((data) => {
-                    this.open = true;
                     this.isLoading = false;
                     this.dataRumahSakit = data;
                 });
@@ -125,6 +131,7 @@ function getRumahSakit() {
 function getHospitalDetails() {
     var parameter = location.hash.split("/");
     return {
+        paramnya: parameter[3],
         dataSearch: parameter[2],
         dataRumahSakit1: null,
         isLoading: false,
