@@ -29,8 +29,8 @@ background-size: cover;background-image:url('assets/img/header2.jpg');">
     <div x-data="getDestinasiWisata1()" x-init="fetchWisata()">
       <div class="">
         <div class="relative sticky bottom-0 rounded-xl bg-white p-4 font-medium text-slate-500 shadow-sm">
-          <div class="pt-2 relative mx-auto text-gray-600">
-            <input class="w-full border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
+          <div class="pt-2 pb-1 relative mx-auto text-gray-600">
+            <input class="w-full border border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
               type="search" name="search" placeholder="Telusuri...">
             <button type="submit" class="absolute right-0 top-0 mt-5 mr-4">
               <svg class="text-gray-600 h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg"
@@ -95,23 +95,23 @@ background-size: cover;background-image:url('assets/img/header2.jpg');">
         <section x-data="{ active: 1, pemerintah: true }" id="bottom-navigation" class="border-t border-gray text-slate-600 p-1 block fixed inset-x-0 bottom-0 z-10 bg-white">
           <div id="tabs" class="flex justify-between">
             <a x-bind:class="{'text-emerald-600 border-b-4 border-emerald-600': active === 1 }"
-            x-on:click.prevent="active = 1" href="#" class="w-full focus:text-teal-500 hover:text-teal-500 justify-center inline-block text-center pt-2 pb-1">
+            x-on:click.prevent="active = 1" href="#" class="w-full justify-center inline-block text-center pt-2 pb-1">
               <i class="far fa-building fa-lg"></i>
               <span class="tab tab-home block text-xs">Pusat</span>
             </a>
             <a href="#" x-bind:class="{'text-emerald-600 border-b-4 border-emerald-600': active === 2 }"
-            x-on:click.prevent="active = 2" class="w-full focus:text-teal-500 hover:text-teal-500 justify-center inline-block text-center pt-2 pb-1">
+            x-on:click.prevent="active = 2" class="w-full justify-center inline-block text-center pt-2 pb-1">
               <i class="far fa-store fa-lg"></i>
               <span class="tab tab-kategori block text-xs">Umum</span>
             </a>
             <a href="#" x-bind:class="{'text-emerald-600 border-b-4 border-emerald-600': active === 3 }"
-            x-on:click.prevent="active = 3" class="w-full focus:text-teal-500 hover:text-teal-500 justify-center inline-block text-center pt-2 pb-1">
+            x-on:click.prevent="active = 3" class="w-full justify-center inline-block text-center pt-2 pb-1">
               <i class="far fa-umbrella-beach fa-lg"></i>
               <span class="tab tab-explore block text-xs">Wisata</span>
             </a>
            
             <a x-bind:class="{'text-emerald-600 border-b-4 border-emerald-600': active === 4 }"
-            x-on:click.prevent="active = 4" class="w-full focus:text-teal-500 hover:text-teal-500 justify-center inline-block text-center pt-2 pb-1">
+            x-on:click.prevent="active = 4" class="w-full justify-center inline-block text-center pt-2 pb-1">
               <i class="far fa-users fa-lg"></i>
               <span class="tab tab-account block text-xs">Akun</span>
             </a>
