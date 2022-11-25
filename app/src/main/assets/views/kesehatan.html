@@ -1,6 +1,6 @@
     <div class="mx-auto max-w-[450px]">
   <div class="h-full bg-gray-50">
-    <div class="rounded-b-2xl h-60 bg-slate-700 p-5 pt-11 pb-44 text-white" style="background-position: center;
+    <div class="rounded-b-1xl h-60 bg-slate-700 p-5 pt-11 pb-44 text-white" style="background-position: center;
     background-repeat: no-repeat;
     background-size: cover;background-image:url('assets/img/header-kesehatan.png');">
       <div class="mb-4 flex items-center justify-start">
@@ -16,7 +16,7 @@
       </div>
       <div class="space-y-2 text-center"></div>
     </div>
-    <div x-data="getRumahSakit()" x-init="fetchRumahSakit()">
+    <div class="animate__animated animate__slideInUp" x-data="getRumahSakit()" x-init="fetchRumahSakit()">
       <div class="-mt-40 p-5">
         <div class="rounded-xl bg-white p-4 font-medium text-slate-500 shadow-sm">
           <div class="mb-3 text-sm">Cari Rumah Sakit</div>
@@ -45,10 +45,10 @@
     </ul>
           <br>
           <br>
-          <button @click="fetchRumahSakit()" class="flex w-full items-center justify-center rounded-lg bg-emerald-500 py-3 px-1 font-medium tracking-wide text-white text-opacity-90 shadow-slate-100 hover:shadow-lg" :class="[ 'hover:bg-emerald-400' ]">
-            <span class="mr-2">Cari</span>
+          <button style="margin-top:-5px;" @click="fetchRumahSakit()" class="flex w-full items-center justify-center rounded-lg bg-emerald-500 py-2 px-1 font-medium tracking-wide text-white text-opacity-90 shadow-slate-100 hover:shadow-lg" :class="[ 'hover:bg-emerald-400' ]">
+            <span class="mr-2">Telusuri</span>
           </button>
-          <br>
+          
         </div>
       </div>
       <section x-show="open_data" class="p-5">

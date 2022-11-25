@@ -1,5 +1,5 @@
 <div class="mx-auto max-w-[450px]">
-  <div class="relative w-full h-60 rounded-b-2xl bg-center shadow-lg" style="background-position: center;
+  <div class="relative w-full h-60 rounded-b-1xl bg-center shadow-lg" style="background-position: center;
 background-repeat: no-repeat;
 background-size: cover;background-image:url('assets/img/header2.jpg');">
     <nav class="p-2 flex flex-grow justify-between items-center mx-auto">
@@ -113,23 +113,23 @@ background-size: cover;background-image:url('assets/img/header2.jpg');">
         </div>
         <section x-data="{ active: 1 }" id="bottom-navigation" class="border-t border-gray text-slate-600 p-1 block fixed inset-x-0 bottom-0 z-10 bg-white">
           <div id="tabs" class="flex justify-between">
-            <a x-bind:class="{'text-emerald-600 border-b-4 border-emerald-600': active === 1 }"
+            <a x-bind:class="{'text-slate-900 border-b-4 border-slate-600': active === 1 }"
             x-on:click.prevent="active = 1;document.getElementById('pemerintah').style.display = 'block';document.getElementById('umum').style.display = 'none';" href="#" class="w-full justify-center inline-block text-center pt-2 pb-1">
               <i class="far fa-building fa-lg"></i>
               <span class="tab tab-home block text-xs">Pusat</span>
             </a>
-            <a href="#" x-bind:class="{'text-emerald-600 border-b-4 border-emerald-600': active === 2 }"
+            <a href="#" x-bind:class="{'text-slate-900 border-b-4 border-slate-600': active === 2 }"
             x-on:click.prevent="active = 2;document.getElementById('pemerintah').style.display = 'none';document.getElementById('umum').style.display = 'block';" class="w-full justify-center inline-block text-center pt-2 pb-1">
               <i class="far fa-store fa-lg"></i>
               <span class="tab tab-kategori block text-xs">Umum</span>
             </a>
-            <a href="#" x-bind:class="{'text-emerald-600 border-b-4 border-emerald-600': active === 3 }"
+            <a href="#" x-bind:class="{'text-slate-900 border-b-4 border-slate-600': active === 3 }"
             x-on:click.prevent="active = 3" class="w-full justify-center inline-block text-center pt-2 pb-1">
               <i class="far fa-umbrella-beach fa-lg"></i>
               <span class="tab tab-explore block text-xs">Wisata</span>
             </a>
            
-            <a x-bind:class="{'text-emerald-600 border-b-4 border-emerald-600': active === 4 }"
+            <a x-bind:class="{'text-slate-900 border-b-4 border-slate-600': active === 4 }"
             x-on:click.prevent="active = 4" class="w-full justify-center inline-block text-center pt-2 pb-1">
               <i class="far fa-users fa-lg"></i>
               <span class="tab tab-account block text-xs">Akun</span>
