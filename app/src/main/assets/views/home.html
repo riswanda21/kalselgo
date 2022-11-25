@@ -42,7 +42,7 @@ background-size: cover;background-image:url('assets/img/header2.jpg');">
               </svg>
             </button>
           </div>
-          <div x-show="pemerintah">
+          <div id="pemerintah">
             <div class="bg-white p-3 rounded-xl shadow flex items-center justify-between mt-2">
             <div class="flex space-x-6 items-center">
             <img src="assets/img/siaga.png" class="w-20 h-20 rounded-lg"/>
@@ -88,19 +88,38 @@ background-size: cover;background-image:url('assets/img/header2.jpg');">
               </div>
               </div>
           </div>
+          <div id="umum" style="display:none;">
+            <div class="bg-white p-3 rounded-xl shadow flex items-center justify-between mt-2">
+            <div class="flex space-x-6 items-center">
+            <img src="assets/img/pangan-icon.png" class="w-20 h-20 rounded-lg"/>
+            <div>
+              <a href="#/pangan">
+            <p class="font-semibold text-base">Harga Pangan</p>
+            <p class="font-normal text-sm text-gray-400">Informasi terkini terkait harga pangan.</p>
+            </a>
+            </div>
+            </div>
+            <div class="flex space-x-2 items-center">
+              <div class="bg-slate-100 rounded-md p-2 flex items-center">
+                <i class="fas fa-chevron-right fa-sm text-slate-600"></i>
+            </div>
+            </div>
+            </div>
+            
+          </div>
         </div>
       </div>
 
         </div>
-        <section x-data="{ active: 1, pemerintah: true }" id="bottom-navigation" class="border-t border-gray text-slate-600 p-1 block fixed inset-x-0 bottom-0 z-10 bg-white">
+        <section x-data="{ active: 1 }" id="bottom-navigation" class="border-t border-gray text-slate-600 p-1 block fixed inset-x-0 bottom-0 z-10 bg-white">
           <div id="tabs" class="flex justify-between">
             <a x-bind:class="{'text-emerald-600 border-b-4 border-emerald-600': active === 1 }"
-            x-on:click.prevent="active = 1" href="#" class="w-full justify-center inline-block text-center pt-2 pb-1">
+            x-on:click.prevent="active = 1;document.getElementById('pemerintah').style.display = 'block';document.getElementById('umum').style.display = 'none';" href="#" class="w-full justify-center inline-block text-center pt-2 pb-1">
               <i class="far fa-building fa-lg"></i>
               <span class="tab tab-home block text-xs">Pusat</span>
             </a>
             <a href="#" x-bind:class="{'text-emerald-600 border-b-4 border-emerald-600': active === 2 }"
-            x-on:click.prevent="active = 2" class="w-full justify-center inline-block text-center pt-2 pb-1">
+            x-on:click.prevent="active = 2;document.getElementById('pemerintah').style.display = 'none';document.getElementById('umum').style.display = 'block';" class="w-full justify-center inline-block text-center pt-2 pb-1">
               <i class="far fa-store fa-lg"></i>
               <span class="tab tab-kategori block text-xs">Umum</span>
             </a>
