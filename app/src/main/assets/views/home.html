@@ -1,5 +1,5 @@
 <div class="mx-auto max-w-[450px]">
-  <div class="relative w-full h-60 rounded-b-1xl bg-center shadow-lg" style="background-position: center;
+  <div class="relative w-full h-60 rounded-b-2xl bg-center shadow-lg" style="background-position: center;
 background-repeat: no-repeat;
 background-size: cover;background-image:url('assets/img/header.jpg');">
     <nav class="p-2 flex flex-grow justify-between items-center mx-auto">
@@ -28,27 +28,7 @@ background-size: cover;background-image:url('assets/img/header.jpg');">
   <div class="px-3 py-3">
     <div x-data="getDestinasiWisata1()" x-init="fetchWisata()">
       <div x-data="{ active: 1, pemerintah: true }" class="">
-        <div class="rounded-xl bg-white p-4 font-medium text-slate-500 shadow-sm">
-          <div class="shadow-none bg-white pl-1 pb-4 rounded-xl flex items-center justify-between">
-            <a href="#" class="flex space-x-2 items-center mr-4 text-gray-400"
-            x-bind:class="{'text-emerald-500 border-b-4 border-emerald-500': active === 1 }"
-            x-on:click.prevent="active = 1;pemerintah = true;">
-            <i class="fas fa-building fa-lg"></i>
-            <p class="font-semibold text-sm">Pemerintah</p>
-            </a>
-            <a href="#" class="flex space-x-2 items-center mr-4 text-gray-400"
-            x-bind:class="{'text-emerald-500 border-b-4 border-emerald-500': active === 2 }"
-            x-on:click.prevent="active = 2;pemerintah = false;">
-            <i class="fas fa-store fa-lg"></i>
-            <p class="font-semibold text-sm">Umum</p>
-            </a>
-            <a href="#" class="flex space-x-2 items-center mr-4 text-gray-400"
-            x-bind:class="{'text-emerald-500 border-b-4 border-emerald-500': active === 3 }"
-            x-on:click.prevent="active = 3">
-            <i class="fas fa-umbrella-beach fa-lg"></i>
-            <p class="font-semibold text-sm">Wisata</p>
-            </a>
-          </div>
+        <div class="relative sticky bottom-0 rounded-xl bg-white p-4 font-medium text-slate-500 shadow-sm">
           <div class="pt-2 relative mx-auto text-gray-600">
             <input class="w-full border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
               type="search" name="search" placeholder="Telusuri...">
@@ -63,7 +43,7 @@ background-size: cover;background-image:url('assets/img/header.jpg');">
             </button>
           </div>
           <div x-show="pemerintah">
-            <div class="bg-white p-3 rounded-xl shadow-md flex items-center justify-between mt-2">
+            <div class="bg-white p-3 rounded-xl shadow flex items-center justify-between mt-2">
             <div class="flex space-x-6 items-center">
             <img src="assets/img/siaga.png" class="w-20 h-20 rounded-lg"/>
             <div>
@@ -77,7 +57,7 @@ background-size: cover;background-image:url('assets/img/header.jpg');">
             </div>
             </div>
             </div>
-            <div class="bg-white p-3 rounded-xl shadow-md flex items-center justify-between mt-2">
+            <div class="bg-white p-3 rounded-xl shadow flex items-center justify-between mt-2">
             <div class="flex space-x-6 items-center">
             <img src="assets/img/kesehatan.png" class="w-20 h-20 rounded-lg"/>
             <div>
@@ -93,7 +73,7 @@ background-size: cover;background-image:url('assets/img/header.jpg');">
             </div>
           
             </div>
-            <div class="bg-white p-3 rounded-xl shadow-md flex items-center justify-between mt-2">
+            <div class="bg-white p-3 rounded-xl shadow flex items-center justify-between mt-2">
               <div class="flex space-x-6 items-center">
               <img src="assets/img/pendidikan.png" class="w-20 h-20 rounded-lg"/>
               <div>
@@ -112,7 +92,27 @@ background-size: cover;background-image:url('assets/img/header.jpg');">
       </div>
 
         </div>
-      </a>
+        <section id="bottom-navigation" class="bg-slate-50 text-slate-600 p-3 block fixed inset-x-0 bottom-0 z-10 bg-white">
+          <div id="tabs" class="flex justify-between">
+            <a href="#" class="w-full focus:text-teal-500 hover:text-teal-500 justify-center inline-block text-center pt-2 pb-1">
+              <i class="far fa-building fa-lg"></i>
+              <span class="tab tab-home block text-xs">Pusat</span>
+            </a>
+            <a href="#" class="w-full focus:text-teal-500 hover:text-teal-500 justify-center inline-block text-center pt-2 pb-1">
+              <i class="far fa-store fa-lg"></i>
+              <span class="tab tab-kategori block text-xs">Umum</span>
+            </a>
+            <a href="#" class="w-full focus:text-teal-500 hover:text-teal-500 justify-center inline-block text-center pt-2 pb-1">
+              <i class="far fa-umbrella-beach fa-lg"></i>
+              <span class="tab tab-explore block text-xs">Wisata</span>
+            </a>
+           
+            <a href=# class="w-full focus:text-teal-500 hover:text-teal-500 justify-center inline-block text-center pt-2 pb-1">
+              <i class="far fa-users fa-lg"></i>
+              <span class="tab tab-account block text-xs">Akun</span>
+            </a>
+          </div>
+        </section>
     </div>
     <!--<h4 class="font-semibold">Sering dikunjungi</h4><div class="grid grid-cols-1"><div x-data="getDestinasiWisata()" x-init="fetchWisata()" class=""><template x-for="wisata in dataWisata.wisata" :key="wisata.id"><div x-transition:enter="transition ease-out duration-300"
         x-transition:enter-start="opacity-0 scale-90"
