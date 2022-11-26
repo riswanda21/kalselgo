@@ -20,4 +20,4 @@ Saat ini API sementara masih menggunakan npoint.io selama masa pengembangan.
 
 | Menu | Details | Details |
 | :---         |     :---:      |          ---: |
-| <img src="https://raw.githubusercontent.com/riswanda21/kalselgo/main/roadmap/home.png">    | <img src="https://raw.githubusercontent.com/riswanda21/kalselgo/main/roadmap/wisata-view.png">      | <img src="https://raw.githubusercontent.com/riswanda21/kalselgo/main/roadmap/hospital-view.png">     |
+| <img src="https://raw.githubusercontent.com/riswanda21/kalselgo/main/roadmap/home1.png">    | <img src="https://raw.githubusercontent.com/riswanda21/kalselgo/main/roadmap/wisata-view1.png">      | <img src="https://raw.githubusercontent.com/riswanda21/kalselgo/main/roadmap/hospital-view1.png">     |
