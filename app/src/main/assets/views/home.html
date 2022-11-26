@@ -68,9 +68,37 @@ background-size: cover;background-image:url('assets/img/header2.jpg');">
                 </div>
               </div>
               <br>
-              <h4 class="font-semibold">Kalsel terkini</h4>
-              <div class="grid m-0  grid-cols-2  space-x-4 overflow-y-scroll flex justify-center items-center w-full ">
-                
+              <h4 class="font-semibold">Kalsel terkini</h4><br>
+              <div class="grid grid-cols-2  space-x-4 overflow-y-scroll flex justify-center items-center w-full ">
+                <div class="flex flex-col w-full bg-white rounded shadow-lg">
+                  <div class="w-full h-36 bg-top bg-cover rounded-lg" style="height:100px;background-image: url(https://cdn-2.tstatic.net/banjarmasin/foto/bank/images2/Pengendara-melintasi-ruas-Jalan-Antasan-Kecil-Barat-yang-tergenang-air.jpg)"></div>
+                  <div class="flex flex-col w-full">
+                      <div class="p-4 font-normal text-gray-800 md:w-3/4">
+                          <p class="leading-normal" style="line-height: 1.6rem;
+                          overflow: hidden;
+                          display: -webkit-box; 
+                          -webkit-line-clamp: 2;
+                          -webkit-box-orient: vertical;
+                          max-height: 3.2rem;">Beberapa Ruas Jalan di Banjarmasin Tergenang akibat Pasang Air Laut</p>
+                          
+                      </div>
+                  </div>
+              </div>
+              <div class="flex flex-col w-full bg-white rounded shadow-lg">
+                <div class="w-full h-36 bg-top bg-cover rounded-lg" style="height:100px;background-image: url(https://cdn-2.tstatic.net/banjarmasin/foto/bank/images/Wali-Kota-Banjarbaru-H-M-Aditya-Mufti-Ariffin-saat-menanam-pohon.jpg)"></div>
+                <div class="flex flex-col w-full">
+                    <div class="p-4 font-normal text-gray-800 md:w-3/4">
+                        <p class="leading-normal" style="line-height: 1.6rem;
+                        overflow: hidden;
+                        display: -webkit-box; 
+                        -webkit-line-clamp: 2;
+                        -webkit-box-orient: vertical;
+                        max-height: 3.2rem;">Hadiri Kegiatan Puncak HPAI Kalsel, Aditya Canangkan Program Satu Anak Satu Pohon di Banjarbaru</p>
+                    </div>
+                </div>
+            </div>
+          </div>
+          
           </div>
           <div id="umum" style="display:none;">
             <div class="bg-white p-3 rounded-xl shadow flex items-center justify-between mt-2">
@@ -110,13 +138,13 @@ background-size: cover;background-image:url('assets/img/header2.jpg');">
       
   </div>
   <div class="fixed inset-x-0 bottom-0 z-50  p-5 px-6 m-2   flex items-center justify-between   bg-gray-900 shadow-3xl text-gray-400 rounded-2xl cursor-pointer">
-    <div class="flex flex-col items-center transition ease-in duration-200 hover:text-blue-400 ">
+    <div onclick="document.getElementById('pemerintah').style.display = 'block';document.getElementById('umum').style.display = 'none';document.getElementById('wisata').style.display = 'none'; " class="flex flex-col items-center transition ease-in duration-200 hover:text-blue-400 ">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z">
         </path>
       </svg>
     </div>
-    <div class="flex flex-col items-center transition ease-in duration-200 hover:text-blue-400 ">
+    <div onclick="document.getElementById('pemerintah').style.display = 'none';document.getElementById('umum').style.display = 'block';document.getElementById('wisata').style.display = 'none'; " class="flex flex-col items-center transition ease-in duration-200 hover:text-blue-400 ">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
       </svg>
@@ -127,7 +155,7 @@ background-size: cover;background-image:url('assets/img/header2.jpg');">
         <span class="animate-ping absolute inline-flex h-full w-full rounded-full border-4 opacity-50"></span>
       </div>
     </div>
-    <div class="flex flex-col items-center transition ease-in duration-200 hover:text-blue-400 ">
+    <div onclick="active = 3;document.getElementById('umum').style.display = 'none';document.getElementById('pemerintah').style.display = 'none';document.getElementById('wisata').style.display = 'block'; " class="flex flex-col items-center transition ease-in duration-200 hover:text-blue-400 ">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path>
       </svg>
@@ -138,7 +166,7 @@ background-size: cover;background-image:url('assets/img/header2.jpg');">
         </path>
       </svg>
     </div>
-  </div>
+  </div></div>
   <section style="display:none;" x-data="{ active: 1 }" id="bottom-navigation" class="border-t border-gray text-slate-600 p-1 block fixed inset-x-0 bottom-0 z-50 bg-white">
   <div id="tabs" class="flex justify-between">
   <a x-bind:class="{'text-slate-900 border-b-4 border-slate-600': active === 1 }"
@@ -163,7 +191,7 @@ background-size: cover;background-image:url('assets/img/header2.jpg');">
   <span class="tab tab-account block text-xs">Akun</span>
   </a>
   </div>
-  </section>
+</section>
 
 
 <style>
