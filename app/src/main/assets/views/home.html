@@ -1,4 +1,4 @@
-<div class="mx-auto max-w-[450px]">
+<div class="overflow-y-auto mx-auto h-[800px] max-w-[450px]">
   <div class="relative w-full h-60 rounded-b-2xl bg-center shadow-lg" style="background-position: center;
 background-repeat: no-repeat;
 background-size: cover;background-image:url('assets/img/header2.jpg');">
@@ -16,7 +16,7 @@ background-size: cover;background-image:url('assets/img/header2.jpg');">
     <br>
     </nav>
     <div style="margin-top:30px;" class="px-3 rounded-lg  flex flex-col w-full">
-      <img src="assets/img/logo2.png" class="" width="200px">
+      <img src="assets/img/logo2.png" class="" width="180px">
       <div class="flex justify-between items-center ">
         <div class="flex flex-col">
           <h2 style="margin-left:20px;" class="text-sm flex items-center text-gray-100 font-medium">Eksplorasi Kalsel dalam genggaman. </h2>
@@ -26,9 +26,9 @@ background-size: cover;background-image:url('assets/img/header2.jpg');">
     </div>
 
   <div class="px-3 py-3">
-    <div x-data="getDestinasiWisata1()" x-init="fetchWisata()">
+    <div>
       <div class="">
-        <div class="relative sticky bottom-0 rounded-xl bg-white p-4 font-medium text-slate-500 shadow-sm">
+        <div class="bottom-0 rounded-xl bg-white p-4 font-medium text-slate-500 shadow-sm">
           <div class="pt-2 pb-1 relative mx-auto text-gray-600">
             <input class="w-full border border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
               type="search" name="search" placeholder="Telusuri...">
@@ -45,7 +45,7 @@ background-size: cover;background-image:url('assets/img/header2.jpg');">
           <div id="pemerintah">
             <div class="bg-white p-3 rounded-xl shadow flex items-center justify-between mt-2">
             <div class="flex space-x-6 items-center">
-            <img src="assets/img/siaga.png" class="w-20 h-20 rounded-lg"/>
+            <img src="assets/img/siaga.png" class="w-16 h-16 rounded-lg"/>
             <div>
             <p class="font-semibold text-base">Kalsel Siaga</p>
             <p class="font-normal text-sm text-gray-400">Nomor penting disaat keadaan darurat.</p>
@@ -55,11 +55,11 @@ background-size: cover;background-image:url('assets/img/header2.jpg');">
             </div>
             <div class="bg-white p-3 rounded-xl shadow flex items-center justify-between mt-2">
             <div class="flex space-x-6 items-center">
-            <img src="assets/img/kesehatan.png" class="w-20 h-20 rounded-lg"/>
+            <img src="assets/img/kesehatan.png" class="w-16 h-16 rounded-lg"/>
             <div>
             <a href="#/kesehatan">
             <p class="font-semibold text-base">Kesehatan</p>
-            <p class="font-normal text-sm text-gray-400">Pusat Layanan Kesehatan yang ada di Kalimantan Selatan.</p></a>
+            <p class="font-normal text-sm text-gray-400">Layanan Kesehatan yang ada di Kalimantan Selatan.</p></a>
             </div>
             </div>
             
@@ -67,17 +67,17 @@ background-size: cover;background-image:url('assets/img/header2.jpg');">
             </div>
             <div class="bg-white p-3 rounded-xl shadow flex items-center justify-between mt-2">
               <div class="flex space-x-6 items-center">
-              <img src="assets/img/pendidikan.png" class="w-20 h-20 rounded-lg"/>
+              <img src="assets/img/pendidikan.png" class="w-16 h-16 rounded-lg"/>
               <div>
               <p class="font-semibold text-base">Pendidikan</p>
-              <p class="font-normal text-sm text-gray-400">Pusat Pendidikan yang ada di Kalimantan Selatan.</p>
+              <p class="font-normal text-sm text-gray-400">Layanan Pendidikan yang ada di Kalimantan Selatan.</p>
               </div>
               </div>
               
               </div>
               <div class="bg-white p-3 rounded-xl shadow flex items-center justify-between mt-2">
                 <div class="flex space-x-6 items-center">
-                <img src="assets/img/pengaduan.png" class="w-20 h-20 rounded-lg"/>
+                <img src="assets/img/pengaduan.png" class="w-16 h-16 rounded-lg"/>
                 <div>
                 <p class="font-semibold text-base">Pengaduan</p>
                 <p class="font-normal text-sm text-gray-400">Layanan pengaduan secara online.</p>
@@ -89,7 +89,7 @@ background-size: cover;background-image:url('assets/img/header2.jpg');">
           <div id="umum" style="display:none;">
             <div class="bg-white p-3 rounded-xl shadow flex items-center justify-between mt-2">
             <div class="flex space-x-6 items-center">
-            <img src="assets/img/pangan-icon.png" class="w-20 h-20 rounded-lg"/>
+            <img src="assets/img/pangan-icon.png" class="w-16 h-16 rounded-lg"/>
             <div>
               <a href="#/pangan">
             <p class="font-semibold text-base">Harga Pangan</p>
@@ -103,11 +103,11 @@ background-size: cover;background-image:url('assets/img/header2.jpg');">
           <div id="wisata" style="display:none;">
             <div class="bg-white p-3 rounded-xl shadow flex items-center justify-between mt-2">
             <div class="flex space-x-6 items-center">
-            <img src="assets/img/wisata.png" class="w-20 h-20 rounded-lg"/>
+            <img src="assets/img/wisata.png" class="w-16 h-16 rounded-lg"/>
             <div>
-              <a href="#/pangan">
+              <a href="#/wisata">
             <p class="font-semibold text-base">Wisata Alam</p>
-            <p class="font-normal text-sm text-gray-400">Informasi terkini terkait harga pangan.</p>
+            <p class="font-normal text-sm text-gray-400">Jelajahi wisata alam yang ada di Kalimantan Selatan.</p>
             </a>
             </div>
             </div>
@@ -118,31 +118,7 @@ background-size: cover;background-image:url('assets/img/header2.jpg');">
       </div>
 
         </div>
-        <section x-data="{ active: 1 }" id="bottom-navigation" class="border-t border-gray text-slate-600 p-1 block fixed inset-x-0 bottom-0 z-10 bg-white">
-          <div id="tabs" class="flex justify-between">
-            <a x-bind:class="{'text-slate-900 border-b-4 border-slate-600': active === 1 }"
-            x-on:click.prevent="active = 1;document.getElementById('pemerintah').style.display = 'block';document.getElementById('umum').style.display = 'none';" href="#" class="w-full justify-center inline-block text-center pt-2 pb-1">
-              <i class="far fa-building fa-lg"></i>
-              <span class="tab tab-home block text-xs">Pusat</span>
-            </a>
-            <a href="#" x-bind:class="{'text-slate-900 border-b-4 border-slate-600': active === 2 }"
-            x-on:click.prevent="active = 2;document.getElementById('pemerintah').style.display = 'none';document.getElementById('umum').style.display = 'block';" class="w-full justify-center inline-block text-center pt-2 pb-1">
-              <i class="far fa-store fa-lg"></i>
-              <span class="tab tab-kategori block text-xs">Umum</span>
-            </a>
-            <a href="#" x-bind:class="{'text-slate-900 border-b-4 border-slate-600': active === 3 }"
-            x-on:click.prevent="active = 3" class="w-full justify-center inline-block text-center pt-2 pb-1">
-              <i class="far fa-umbrella-beach fa-lg"></i>
-              <span class="tab tab-explore block text-xs">Wisata</span>
-            </a>
-           
-            <a x-bind:class="{'text-slate-900 border-b-4 border-slate-600': active === 4 }"
-            x-on:click.prevent="active = 4" class="w-full justify-center inline-block text-center pt-2 pb-1">
-              <i class="far fa-users fa-lg"></i>
-              <span class="tab tab-account block text-xs">Akun</span>
-            </a>
-          </div>
-        </section>
+        
     </div>
     <!--<h4 class="font-semibold">Sering dikunjungi</h4><div class="grid grid-cols-1"><div x-data="getDestinasiWisata()" x-init="fetchWisata()" class=""><template x-for="wisata in dataWisata.wisata" :key="wisata.id"><div x-transition:enter="transition ease-out duration-300"
         x-transition:enter-start="opacity-0 scale-90"
@@ -153,7 +129,34 @@ background-size: cover;background-image:url('assets/img/header2.jpg');">
 					xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 hover:text-blue-400 cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path></svg></div><div class="flex pt-2  text-sm text-gray-400"><div class="flex items-center mr-auto"><svg
 					xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500 mr-1" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg><p x-text="wisata.rate" class="font-normal"></p></div></div></div></div></template></div></div>!-->
   </div>
-</div>
+  </div>
+  <section x-data="{ active: 1 }" id="bottom-navigation" class="border-t border-gray text-slate-600 p-1 block fixed inset-x-0 bottom-0 z-50 bg-white">
+  <div id="tabs" class="flex justify-between">
+  <a x-bind:class="{'text-slate-900 border-b-4 border-slate-600': active === 1 }"
+  x-on:click.prevent="active = 1;document.getElementById('pemerintah').style.display = 'block';document.getElementById('umum').style.display = 'none';document.getElementById('wisata').style.display = 'none'; " href="#" class="w-full justify-center inline-block text-center pt-2 pb-1">
+  <i class="far fa-building fa-lg"></i>
+  <span class="tab tab-home block text-xs">Pusat</span>
+  </a>
+  <a href="#" x-bind:class="{'text-slate-900 border-b-4 border-slate-600': active === 2 }"
+  x-on:click.prevent="active = 2;document.getElementById('pemerintah').style.display = 'none';document.getElementById('umum').style.display = 'block';document.getElementById('wisata').style.display = 'none'; " class="w-full justify-center inline-block text-center pt-2 pb-1">
+  <i class="far fa-store fa-lg"></i>
+  <span class="tab tab-kategori block text-xs">Umum</span>
+  </a>
+  <a href="#" x-bind:class="{'text-slate-900 border-b-4 border-slate-600': active === 3 }"
+  x-on:click.prevent="active = 3;document.getElementById('umum').style.display = 'none';document.getElementById('pemerintah').style.display = 'none';document.getElementById('wisata').style.display = 'block'; " class="w-full justify-center inline-block text-center pt-2 pb-1">
+  <i class="far fa-umbrella-beach fa-lg"></i>
+  <span class="tab tab-explore block text-xs">Wisata</span>
+  </a>
+  
+  <a x-bind:class="{'text-slate-900 border-b-4 border-slate-600': active === 4 }"
+  x-on:click.prevent="active = 4" class="w-full justify-center inline-block text-center pt-2 pb-1">
+  <i class="far fa-users fa-lg"></i>
+  <span class="tab tab-account block text-xs">Akun</span>
+  </a>
+  </div>
+  </section>
+
+
 <style>
   ::-webkit-scrollbar {
     width: 0;
