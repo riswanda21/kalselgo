@@ -1,6 +1,6 @@
     <div class="mx-auto max-w-[450px]">
   <div class="h-full bg-gray-50">
-    <div class="rounded-b-2xl h-60 bg-slate-700 p-5 pt-11 pb-44 text-white" style="background-position: center;
+    <div class="rounded-b-2xl h-60 bg-slate-700 p-3 pt-11 pb-44 text-white" style="background-position: center;
     background-repeat: no-repeat;
     background-size: cover;background-image:url('assets/img/header-kesehatan.png');">
       <div class="mb-4 flex items-center justify-start">
@@ -16,12 +16,12 @@
       </div>
       <div class="space-y-2 text-center"></div>
     </div>
-    <div class="animate__animated animate__slideInUp" x-data="getRumahSakit()" x-init="fetchRumahSakit()">
+    <div x-data="getRumahSakit()" x-init="fetchRumahSakit()">
       <div class="-mt-40 p-4">
         <div class="rounded-xl bg-white p-4 font-medium text-slate-500 shadow-sm">
           <div class="mb-3 text-sm">Cari Rumah Sakit</div>
           <input onkeydown="return false;" x-on:click="open = !open; open_data = !open_data" x-model="dataName" type="search" placeholder="Pilih Kabupaten" style="width:100%;" class="border border-solid border-gray-300 w-full px-3
-          py-1.5 w-1/2 rounded shadow font-thin focus:outline-none focus:shadow-lg focus:shadow-slate-200 duration-100 shadow-gray-100">
+          py-1.5 w-1/2 rounded shadow font-thin focus:outline-none focus:shadow-lg focus:shadow-slate-200 duration-100 shadow-gray-100" readonly>
           <ul x-show="open" x-on:click.outside="open = !open; open_data = !open_data"  x-transition:enter="transition ease-out duration-300"
         x-transition:enter-start="opacity-0 translate"
         x-transition:enter-end="opacity-100 translate"
@@ -51,10 +51,10 @@
           
         </div>
       </div>
-      <section x-show="open_data" class="p-5">
+      <section x-show="open_data" class="pl-5 pr-5 pt-1">
         <div class="space-y-2">
           <template x-for="rumahsakit in dataRumahSakit.hospitals" :key="rumahsakit.id">
-              <div x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90" class="flex space-x-3 rounded-b-2xl bg-white p-3 shadow-sm">
+              <div x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90" class="flex space-x-3 rounded-2xl bg-white p-3 shadow-sm">
                 <img x-bind:src="'assets/img/rumah-sakit/' + rumahsakit.id + '.jpg'" onerror="this.onerror=null; this.src='assets/img/rumah-sakit/default.jpg';return false;" alt="Just a flower" style="width:50px;height:50px;" class="w-16  object-cover  h-16 rounded-xl">
                 <a x-bind:href="'#/kesehatan-details/' + rumahsakit.id + '/' + dataName">
                 <div>

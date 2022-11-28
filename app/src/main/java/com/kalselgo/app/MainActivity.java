@@ -16,11 +16,11 @@ import android.content.Intent;
 public class MainActivity extends Activity {
 	
 	public static boolean flag = false;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 	    setContentView(R.layout.activity_main);
-		
 		WebView webView = (WebView) findViewById(R.id.web);
 		
 		webView.getSettings().setJavaScriptEnabled(true);
