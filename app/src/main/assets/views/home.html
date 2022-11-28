@@ -1,4 +1,4 @@
-<div class="overflow-y-auto mx-auto h-[800px] max-w-[450px]">
+<div x-data="main()" class="overflow-y-auto mx-auto h-[800px] max-w-[450px]">
   <div class="relative w-full h-60 rounded-b-2xl bg-center shadow-lg" style="background-position: center;
 background-repeat: no-repeat;
 background-size: cover;background-image:url('assets/img/header2.jpg');">
@@ -16,10 +16,10 @@ background-size: cover;background-image:url('assets/img/header2.jpg');">
       <br>
     </nav>
     <div style="margin-top:30px;" class="px-3 rounded-lg  flex flex-col w-full">
-      <img src="assets/img/logo2.png" class="" width="180px">
+      <img x-bind:src="logo" class="" width="180px">
       <div class="flex justify-between items-center ">
         <div class="flex flex-col">
-          <h2 style="margin-left:17px;" class="text-sm flex items-center text-gray-100 font-medium">Eksplorasi Kalsel dalam genggaman. </h2>
+          <h2 style="margin-left:17px;" x-text="description" class="text-sm flex items-center text-gray-100 font-medium">Eksplorasi Kalsel dalam genggaman.</h2>
         </div>
       </div>
       <br>
