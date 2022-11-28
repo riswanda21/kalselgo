@@ -52,6 +52,9 @@
         </div>
       </div>
       <section x-show="open_data" class="pt-1 pl-5 pr-5">
+        <div x-show="isLoading">
+          <center><div class="loader_mini"></div></center>
+        </div>
         <div class="space-y-2">
           <template x-for="wisata in dataWisata.wisata" :key="wisata.id">
              <div x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90" class="flex space-x-3 rounded-2xl bg-white p-3 shadow-sm">
