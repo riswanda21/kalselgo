@@ -1,7 +1,7 @@
 <div class="flex items-center justify-center min-h-screen bg-gray-200 antialiased">
-  <div x-data="getHospitalDetails()" x-init="fetchRumahSakit1()">
+  <div x-data="getHospitalDetails()" x-init="fetchRumahSakit1()" class=" flex flex-col shadow-xl bg-white" style="width:411px;height:823px">
     <template x-if="dataRumahSakit1.data">
-    <div class="flex flex-col shadow-xl bg-white" style="width:411px;height:823px">
+    <div class="flex flex-col shadow-xl bg-white relative">
       <div class="flex flex-col relative">
         <img id="imgHospital" x-bind:src="'assets/img/rumah-sakit/' + dataRumahSakit1.data.id + '.jpg'" onerror="this.onerror=null; this.src='assets/img/rumah-sakit/default.jpg';return false;" style="height:250px;" width="100%" alt="">
         <div class="absolute top-0 pt-11 flex flex-row justify-between px-3">
