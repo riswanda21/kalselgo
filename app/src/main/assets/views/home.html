@@ -31,53 +31,29 @@ background-size: cover;background-image:url('assets/img/header2.jpg');">
             <div id="pemerintah">
               <h4 class="font-semibold mt-2">Pemerintah</h4>
               <div class="font-normal flex items-center justify-between overflow-y-scroll text-gray-500 space-x-3">
-                <div class="">
-                  <i class="far fa-bell fa-lg w-16 p-4 h-16 flex flex-col items-center justify-center  rounded-2xl text-grey-900 shadow hover:shadow-md  mb-2 p-1 bg-white transition ease-in duration-300"></i>
-                  <p class="flex flex-col items-center justify-center text-sm">Siaga</p>
-                </div>
-                <div class="">
-                  <a href="#/kesehatan">
-                    <i class="far fa-hospital fa-lg w-16 p-4 h-16 flex flex-col items-center justify-center  rounded-2xl text-grey-600 shadow hover:shadow-md  mb-2 p-1 bg-white transition ease-in duration-300"></i>
-                  </a>
-                  <p class="flex flex-col items-center justify-center text-sm">Kesehatan</p>
-                </div>
-                <div class="">
-                  <i class="far fa-school fa-lg w-16 p-4 h-16 flex flex-col items-center justify-center  rounded-2xl text-grey-600 shadow hover:shadow-md  mb-2 p-1 bg-white transition ease-in duration-300"></i>
-                  <p class="flex flex-col items-center justify-center text-sm">Pendidikan</p>
-                </div>
-                <div class="">
-                  <i class="far fa-comments fa-lg w-16 p-4 h-16 flex flex-col items-center justify-center  rounded-2xl text-grey-600 shadow hover:shadow-md  mb-2 p-1 bg-white transition ease-in duration-300"></i>
-                  <p class="flex flex-col items-center justify-center text-sm">Pengaduan</p>
-                </div>
-                
-              </div><br>
+                <template x-for="menu_per in menu_pemerintah">
+                  <div class="">
+                    <a x-bind:href="menu_per.link">
+                      <i :class="menu_per.icon" class="far fa-lg w-16 p-4 h-16 flex flex-col items-center justify-center  rounded-2xl text-grey-600 shadow hover:shadow-md  mb-2 p-1 bg-white transition ease-in duration-300"></i>
+                    </a>
+                    <p x-text="menu_per.nama" class="flex flex-col items-center justify-center text-sm"></p>
+                  </div>
+                </template>
+              </div>
+              <br>
               <h4 class="font-semibold mt-2">Layanan Publik</h4>
               <div class="font-normal flex items-center justify-between overflow-y-scroll text-gray-500 space-x-3">
-                <div class="">
-                  <a href="#/wisata">
-                  <i class="far fa-umbrella-beach fa-lg w-16 p-4 h-16 flex flex-col items-center justify-center  rounded-2xl text-grey-900 shadow hover:shadow-md  mb-2 p-1 bg-white transition ease-in duration-300"></i>
-                  <p class="flex flex-col items-center justify-center text-sm">Wisata</p>
-                </a>
-                </div>
-                <div class="">
-                  <a href="#/">
-                    <i class="far fa-store fa-lg w-16 p-4 h-16 flex flex-col items-center justify-center  rounded-2xl text-grey-600 shadow hover:shadow-md  mb-2 p-1 bg-white transition ease-in duration-300"></i>
-                  </a>
-                  <p class="flex flex-col items-center justify-center text-sm">Belanja</p>
-                </div>
-                <div class="">
-                  <a href="#/pangan">
-                  <i class="far fa-utensils fa-lg w-16 p-4 h-16 flex flex-col items-center justify-center  rounded-2xl text-grey-600 shadow hover:shadow-md  mb-2 p-1 bg-white transition ease-in duration-300"></i>
-                    <p class="flex flex-col items-center justify-center text-sm">Pangan</p>
-                  </a>
-                </div>
-                <div class="">
-                  <i class="far fa-briefcase fa-lg w-16 p-4 h-16 flex flex-col items-center justify-center  rounded-2xl text-grey-600 shadow hover:shadow-md  mb-2 p-1 bg-white transition ease-in duration-300"></i>
-                  <p class="flex flex-col items-center justify-center text-sm">Loker</p>
-                </div>
-                
+                <template x-for="menu_per in menu_publik">
+                  <div class="">
+                    <a x-bind:href="menu_per.link">
+                      <i :class="menu_per.icon" class="far fa-lg w-16 p-4 h-16 flex flex-col items-center justify-center  rounded-2xl text-grey-600 shadow hover:shadow-md  mb-2 p-1 bg-white transition ease-in duration-300"></i>
+                    </a>
+                    <p x-text="menu_per.nama" class="flex flex-col items-center justify-center text-sm"></p>
+                  </div>
+                </template>
               </div>
-              <br><br>
+              <br>
+              <br>
               <h4 class="font-semibold">Berita Terkini</h4>
               <br>
               <div class="grid grid-cols-2  space-x-4 overflow-y-scroll flex justify-center items-center w-full ">
@@ -151,11 +127,11 @@ background-size: cover;background-image:url('assets/img/header2.jpg');">
   <div x-bind:class="{'text-emerald-600 border-b-4 border-emerald-600': active === 2 }" x-on:click.prevent="active = 2;document.getElementById('pemerintah').style.display = 'none';document.getElementById('umum').style.display = 'block';document.getElementById('wisata').style.display = 'none'; " class="flex flex-col items-center transition ease-in duration-200 hover:text-blue-400 ">
     <svg class="h-6 w-6" viewBox="0 0 42 42" class="inline-block mb-1">
       <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-          <path d="M20.5890101,0.254646884 C12.8696785,5.50211755 8.0025785,14.258415 14.1941217,18.8708225 C23.16683,25.5550669 13.3362326,40.2698884 33.1021758,38.4149164 C29.6814884,40.8311956 25.5065164,42.2507054 21,42.2507054 C9.40202025,42.2507054 0,32.8486852 0,21.2507054 C0,9.79003409 9.18071714,0.473634138 20.5890101,0.254646884 Z" fill="currentColor" opacity="0.1"></path>
-          <path d="M25.9500282,20.3643496 L22.4308312,38.2677802 C22.3775703,38.5387376 22.1147395,38.7152155 21.8437821,38.6619546 C21.6570955,38.6252584 21.507413,38.4857901 21.4576354,38.3021581 L16.5951895,20.3643496 L20.099732,4.44663907 C20.1385204,4.27046145 20.2692032,4.12883813 20.4417012,4.07604096 C20.7057521,3.99522179 20.9853245,4.14376046 21.0661436,4.40781135 L25.9500282,20.3643496 Z M21.3022963,22.2852638 C22.4068658,22.2852638 23.3022963,21.3898333 23.3022963,20.2852638 C23.3022963,19.1806943 22.4068658,18.2852638 21.3022963,18.2852638 C20.1977268,18.2852638 19.3022963,19.1806943 19.3022963,20.2852638 C19.3022963,21.3898333 20.1977268,22.2852638 21.3022963,22.2852638 Z" fill="currentColor" transform="translate(21.272609, 20.629524) rotate(-315.000000) translate(-21.272609, -20.629524) "></path>
-          <circle stroke="currentColor" stroke-width="2" cx="21" cy="21" r="20"></circle>
-        </g>
-      </svg>
+        <path d="M20.5890101,0.254646884 C12.8696785,5.50211755 8.0025785,14.258415 14.1941217,18.8708225 C23.16683,25.5550669 13.3362326,40.2698884 33.1021758,38.4149164 C29.6814884,40.8311956 25.5065164,42.2507054 21,42.2507054 C9.40202025,42.2507054 0,32.8486852 0,21.2507054 C0,9.79003409 9.18071714,0.473634138 20.5890101,0.254646884 Z" fill="currentColor" opacity="0.1"></path>
+        <path d="M25.9500282,20.3643496 L22.4308312,38.2677802 C22.3775703,38.5387376 22.1147395,38.7152155 21.8437821,38.6619546 C21.6570955,38.6252584 21.507413,38.4857901 21.4576354,38.3021581 L16.5951895,20.3643496 L20.099732,4.44663907 C20.1385204,4.27046145 20.2692032,4.12883813 20.4417012,4.07604096 C20.7057521,3.99522179 20.9853245,4.14376046 21.0661436,4.40781135 L25.9500282,20.3643496 Z M21.3022963,22.2852638 C22.4068658,22.2852638 23.3022963,21.3898333 23.3022963,20.2852638 C23.3022963,19.1806943 22.4068658,18.2852638 21.3022963,18.2852638 C20.1977268,18.2852638 19.3022963,19.1806943 19.3022963,20.2852638 C19.3022963,21.3898333 20.1977268,22.2852638 21.3022963,22.2852638 Z" fill="currentColor" transform="translate(21.272609, 20.629524) rotate(-315.000000) translate(-21.272609, -20.629524) "></path>
+        <circle stroke="currentColor" stroke-width="2" cx="21" cy="21" r="20"></circle>
+      </g>
+    </svg>
   </div>
   <div class="flex flex-col items-center  hover:text-blue-400 ">
     <div class="absolute bottom-5 text-center flex items-center justify-center rounded-full border-4 text-3xl border-gray-50 hover:border-emerald-500 bg-emerald-500 w-20 h-20 p-2 text-white transition ease-in duration-200 ">

@@ -1,18 +1,19 @@
 <div class=" flex items-center justify-center min-h-screen bg-white antialiased resize-none">
   <div x-data="getWisataDetails()" x-init="fetchWisataDetails()" class=" flex flex-col shadow-xl bg-white" style="width:411px;height:823px">
-  <template x-if="dataWisataDetails.wisata">
-    <div class="flex flex-col relative">
-      <div class="absolute">
-      <img id="imgHospital" x-bind:src="dataWisataDetails.wisata[idnya].img" onerror="this.onerror=null; this.src='assets/img/rumah-sakit/default.jpg';return false;" style="height:250px;" width="100%" alt="">
-        <div class="absolute top-0 pt-11 flex flex-row justify-between px-3">
-          <a x-bind:href="'#/wisata/' + dataWisataDetails.wisata[idnya].location">
-          <div class="text-white hover:text-green-500">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="15 18 9 12 15 6"></polyline>
-            </svg>
-          </div></a>
-          <div class="flex flex-row space-x-2"></div>
-        </div>
+    <template x-if="dataWisataDetails.wisata">
+      <div class="flex flex-col relative">
+        <div class="absolute">
+          <img id="imgHospital" x-bind:src="dataWisataDetails.wisata[idnya].img" onerror="this.onerror=null; this.src='assets/img/rumah-sakit/default.jpg';return false;" style="height:250px;" width="100%" alt="">
+          <div class="absolute top-0 pt-11 flex flex-row justify-between px-3">
+            <a x-bind:href="'#/wisata/' + dataWisataDetails.wisata[idnya].location">
+              <div class="text-white hover:text-green-500">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </div>
+            </a>
+            <div class="flex flex-row space-x-2"></div>
+          </div>
           <div x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90" class="p-5 -mt-8 rounded-2xl bg-white relative">
             <div class="flex flex-row items-center space-x-1">
               <p x-text="dataWisataDetails.wisata[idnya].name" class="font-bold text-xl"></p>
@@ -54,19 +55,19 @@
               <p x-text="dataWisataDetails.wisata[idnya].description" class="text-xs"></p>
             </div>
           </div>
-          </template>
-          </div>
-    </div>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
-
-      html {
-        font-family: 'Manrope', sans-serif;
-      }
-
-      .text-xxsm {
-        font-size: 10px;
-      }
-    </style>
+    </template>
   </div>
+</div>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+
+  html {
+    font-family: 'Manrope', sans-serif;
+  }
+
+  .text-xxsm {
+    font-size: 10px;
+  }
+</style>
+</div>
 </div>
