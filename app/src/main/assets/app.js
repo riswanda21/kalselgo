@@ -1,6 +1,6 @@
 route('/', 'home.html');
 route('/kesehatan', 'kesehatan.html');
-route('/pangan', 'pangan.html');
+route('/pangan', 'pangan.html', 'Harga Pangan');
 route('/wisata', 'wisata.html');
 route('/pendidikan', 'pendidikan.html');
 route('/bmkg', 'bmkg.html');
@@ -68,6 +68,13 @@ function main() {
             icon: "fa-briefcase"
          }
       ]
+   };
+}
+
+function setHeader(data) {
+   let template = new Template();
+   return {
+      header: template.header(data)
    };
 }
 

@@ -1,16 +1,13 @@
 <div class="animate__animated animate__slideInRight animate__faster mx-auto max-w-[450px]">
     <div class="h-full bg-gray-50 ">
-      <div class="relative sticky top-0 rounded-b-1xl h-9 bg-slate-50 border-b shadow p-3 pt-11 pb-10 text-slate-800">
-        <div class="mb-4 flex items-center justify-start">
-          <div onclick="history.back()" class="hover:text-green-500">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="15 18 9 12 15 6"></polyline>
-            </svg>
-          </div>
-          <h2 class="font-medium ml-3 text-lg">Data BMKG</h2>
-        </div>
-        <div class="space-y-2 text-center"></div>
-      </div>
+      <div x-data="setHeader(
+  [
+    {
+      text: 'Data BMKG',
+      backgroundColor: 'bg-slate-50',
+      textColor: 'text-slate-800'
+    }
+  ])" x-html="header"></div>
       <div x-data="getBMKG()" x-init="fetchBMKG()">
         <div class="">
           <section class="p-5">
@@ -19,19 +16,13 @@
             </div>
             <div class="space-y-2">
               <template x-for="pangan in dataBMKG.data.areas">
-                
                 <div x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90" class="flex space-x-3 rounded-2xl bg-white p-3 shadow-sm">
-                  <svg class="w-20 h-20 fill-stroke text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
-                                        </path>
-                                    </svg>
                   <div>
                     <h3 x-text="pangan.description" class="font-semibold text-gray-600"></h3>
-                    <template x-for="weather in pangan.params[6].times.slice(3,4)">
+                    <p x-text="pangan.domain" class="text-sm text-slate-400"></p>
+                   <!--<template x-for="weather in pangan.params[6].times.slice(3,4)">
                       <p class="text-sm text-slate-400" x-html="'Tanggal: ' + weather.datetime.substring(6, 8) + '<br> Jam: '+ weather.datetime.substring(8, 10) + '.00<br>' + weather.name"></p>
-                      </template>
+                      </template>!-->
                   </div>
                 </div>
               </template>

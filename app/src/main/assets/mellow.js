@@ -121,6 +121,22 @@ class Storage {
     }
 }
 
+class Template {
+    header(data) {
+        return '<div class="relative sticky top-0 rounded-b-1xl h-9 ' + data[0].backgroundColor + ' border-b shadow p-3 pt-11 pb-10 ' + data[0].textColor + '">' +
+        '<div class="mb-4 flex items-center justify-start">' +
+          '<div onclick="history.back()" class="hover:text-green-500">' +
+            '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
+              '<polyline points="15 18 9 12 15 6"></polyline>'+
+            '</svg>' +
+          '</div>' +
+          '<h2 class="font-medium ml-3 text-lg">' + data[0].text + '</h2>' +
+        '</div>'+
+        '<div class="space-y-2 text-center"></div>'+
+'</div>';
+    }
+}
+
 class Validator {
 
     email (mail) {

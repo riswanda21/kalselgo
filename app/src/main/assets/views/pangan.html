@@ -1,15 +1,13 @@
 <div class="animate__animated animate__slideInRight animate__faster mx-auto max-w-[450px]">
   <div class="h-full bg-gray-50 ">
-    <div class="relative sticky top-0 rounded-b-1xl h-9 bg-slate-50 border-b shadow p-3 pt-11 pb-10 text-slate-800">
-      <div class="mb-4 flex items-center justify-start">
-        <div onclick="history.back()" class="hover:text-green-500">
-          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="15 18 9 12 15 6"></polyline>
-          </svg>
-        </div>
-        <h2 class="font-medium ml-3 text-lg">Harga Pangan</h2>
-      </div>
-      <div class="space-y-2 text-center"></div>
+    <div x-data="setHeader(
+  [
+    {
+      text: 'Harga Pangan',
+      backgroundColor: 'bg-slate-50',
+      textColor: 'text-slate-800'
+    }
+  ])" x-html="header">
     </div>
     <div x-data="getHargaPangan()" x-init="fetchPangan()">
       <div class="">
