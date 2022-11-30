@@ -1,4 +1,4 @@
-route('/', 'home.html');
+;route('/', 'home.html');
 route('/kesehatan', 'kesehatan.html');
 route('/pangan', 'pangan.html', 'Harga Pangan');
 route('/wisata', 'wisata.html');
