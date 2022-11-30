@@ -42,9 +42,9 @@ function main() {
             icon: "fa-school"
          },
          {
-            nama: "Pengaduan",
-            link: "#/pengaduan",
-            icon: "fa-comments"
+            nama: "BMKG",
+            link: "#/bmkg",
+            icon: "fa-smog"
          }
       ],
       menu_publik: [{

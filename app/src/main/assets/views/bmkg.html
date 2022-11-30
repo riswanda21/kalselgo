@@ -29,8 +29,8 @@
                                     </svg>
                   <div>
                     <h3 x-text="pangan.description" class="font-semibold text-gray-600"></h3>
-                    <template x-for="weather in pangan.params[6].times.slice(2,3)">
-                      <p class="text-sm text-slate-400" x-html="'Tanggal: ' + weather.datetime.substring(6, 8) + '<br> Jam: '+ weather.datetime.substring(8, 10) + '.00<br>' + weather.name + '<hr>'"></p>
+                    <template x-for="weather in pangan.params[6].times.slice(3,4)">
+                      <p class="text-sm text-slate-400" x-html="'Tanggal: ' + weather.datetime.substring(6, 8) + '<br> Jam: '+ weather.datetime.substring(8, 10) + '.00<br>' + weather.name"></p>
                       </template>
                   </div>
                 </div>
