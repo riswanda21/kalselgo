@@ -71,10 +71,10 @@ function main() {
    };
 }
 
-function setHeader(data) {
-   let template = new Template();
+function template(data) {
+   let app = new App();
    return {
-      header: template.header(data)
+      header: app.setHeader(data)
    };
 }
 
@@ -111,12 +111,6 @@ function getHargaPangan() {
 }
 
 function getSekolah() {
-   var parameter = location.hash.split("/");
-   if (parameter[2]) {
-      var wisata_param = parameter[2];
-   } else {
-      var wisata_param = "";
-   }
    return {
       dataSearch: "",
       dataSekolah: null,

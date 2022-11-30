@@ -1,13 +1,12 @@
 <div class="animate__animated animate__slideInRight animate__faster mx-auto max-w-[450px]">
     <div class="h-full bg-gray-50 ">
-      <div x-data="setHeader(
-  [
+      <div x-html="header" x-data="template([
     {
       text: 'Data BMKG',
       backgroundColor: 'bg-slate-50',
       textColor: 'text-slate-800'
     }
-  ])" x-html="header"></div>
+  ])"></div>
       <div x-data="getBMKG()" x-init="fetchBMKG()">
         <div class="">
           <section class="p-5">
