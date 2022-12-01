@@ -1,9 +1,9 @@
 route('/', 'home.html');
 route('/kesehatan', 'kesehatan.html');
-route('/pangan', 'pangan.html');
+route('/pangan', 'pangan.html', [{transition: 'slideInRight'}]);
 route('/wisata', 'wisata.html');
 route('/pendidikan', 'pendidikan.html');
-route('/bmkg', 'bmkg.html');
+route('/bmkg', 'bmkg.html', [{transition: 'slideInRight'}]);
 
 function main() {
    let app = new App();

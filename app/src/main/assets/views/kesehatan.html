@@ -48,7 +48,7 @@ background-size: cover;background-image:url('assets/img/header-kesehatan.png');"
           <loading-circle></loading-circle>
         </div>
         <div class="space-y-2" x-show="open_data">
-          <template x-for="rumahsakit in dataRumahSakit.hospitals" :key="rumahsakit.id">
+          <forEach="rumahsakit in dataRumahSakit.hospitals" :key="rumahsakit.id">
             <div x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90" class="flex space-x-3 rounded-2xl bg-white p-3 shadow-sm">
               <img x-bind:src="'assets/img/rumah-sakit/' + rumahsakit.id + '.jpg'" onerror="this.onerror=null; this.src='assets/img/rumah-sakit/default.jpg';return false;" alt="Just a flower" style="width:50px;height:50px;" class="w-16  object-cover  h-16 rounded-xl">
               <a x-bind:href="'#/kesehatan-details/' + rumahsakit.id + '/' + dataName">
@@ -58,7 +58,7 @@ background-size: cover;background-image:url('assets/img/header-kesehatan.png');"
                 </div>
               </a>
             </div>
-          </template>
+          </forEach>
       </section>
     </div>
   </m-body>

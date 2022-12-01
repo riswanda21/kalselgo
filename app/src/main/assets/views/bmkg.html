@@ -14,7 +14,7 @@
               <loading-circle></loading-circle>
             </div>
             <div class="space-y-2">
-              <template x-for="pangan in dataBMKG.data.areas">
+              <forEach="pangan in dataBMKG.data.areas">
                 <div x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90" class="flex space-x-3 rounded-2xl bg-white p-3 shadow-sm">
                   <div>
                     <h3 x-text="pangan.description" class="font-semibold text-gray-600"></h3>
@@ -24,7 +24,7 @@
                       </template>!-->
                   </div>
                 </div>
-              </template>
+              </forEach>
           </section>
         </div>
 </m-body>

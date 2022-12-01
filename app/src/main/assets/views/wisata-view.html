@@ -1,6 +1,6 @@
 <div class=" flex items-center justify-center min-h-screen bg-white antialiased resize-none">
   <div x-data="getWisataDetails()" x-init="fetchWisataDetails()" class=" flex flex-col shadow-xl bg-white" style="width:411px;height:823px">
-    <template x-if="dataWisataDetails.wisata">
+    <if="dataWisataDetails.wisata">
       <div class="flex flex-col relative">
         <div class="absolute">
           <img id="imgHospital" x-bind:src="dataWisataDetails.wisata[idnya].img" onerror="this.onerror=null; this.src='assets/img/rumah-sakit/default.jpg';return false;" style="height:250px;" width="100%" alt="">
@@ -18,11 +18,11 @@
             <div class="flex flex-row items-center space-x-1">
               <p x-text="dataWisataDetails.wisata[idnya].name" class="font-bold text-xl"></p>
               <div class="text-yellow-500 flex flex-row">
-                <template x-for="i in dataWisataDetails.wisata[idnya].rate">
+                <forEach="i in dataWisataDetails.wisata[idnya].rate">
                   <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
                   </svg>
-                </template>
+                </forEach>
               </div>
             </div>
             <br>
@@ -55,7 +55,7 @@
               <p x-text="dataWisataDetails.wisata[idnya].description" class="text-xs"></p>
             </div>
           </div>
-    </template>
+    </if>
   </div>
 </div>
 <style>

@@ -37,11 +37,16 @@ window.addEventListener('load', router);
 /* Load Views Function 
  * This function for load and compile template
  */
-function render(id, file, title = []) {
+function render(id, file, title = [{}]) {
    var files = file.slice((Math.max(0, file.lastIndexOf(".")) || Infinity) + 1);
    if (files == "") {
       document.getElementById(id).innerHTML = file;
    } else {
+      if (title[0].transition == null) {
+      var m_body = '<div class="mx-auto max-w-[450px]"><div class="h-full bg-gray-50">';
+      } else {
+      var m_body = '<div class="animate__animated animate__' + title[0].transition + ' animate__faster mx-auto max-w-[450px]"><div class="h-full bg-gray-50">';
+      }
       var app = new XMLHttpRequest();
       app.open('GET', path + '/' + file, true);
       app.onreadystatechange = function () {
@@ -49,10 +54,14 @@ function render(id, file, title = []) {
          if (this.status !== 200) return;
          var data = this.responseText;
          document.getElementById(id).innerHTML = data.replaceAll('{{title}}', 'test')
-         .replaceAll('<m-body>', '<div class="animate__animated animate__slideInRight animate__faster mx-auto max-w-[450px]"><div class="h-full bg-gray-50">')
+         .replaceAll('<m-body>', m_body)
          .replaceAll('</m-body>', '</div></div>')
          .replaceAll('<nav-mobile', '<div x-html="header"')
          .replaceAll('</nav-mobile>', '</div>')
+         .replaceAll('<forEach="',  '<template x-for="')
+         .replaceAll('</forEach>', '</template>')
+         .replaceAll('<if="', '<template x-if="')
+         .replaceAll('</if>', '</template>')
          .replaceAll('<loading-circle></loading-circle>','<center><div class="loader_mini"></div></center>');
       };
       app.send();

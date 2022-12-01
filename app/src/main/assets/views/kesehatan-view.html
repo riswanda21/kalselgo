@@ -1,6 +1,6 @@
 <div class="flex items-center justify-center min-h-screen bg-gray-200 antialiased">
   <div x-data="getHospitalDetails()" x-init="fetchRumahSakit1()" class=" flex flex-col shadow-xl bg-white" style="width:411px;height:823px">
-    <template x-if="dataRumahSakit1.data">
+    <if="dataRumahSakit1.data">
       <div class="flex flex-col shadow-xl bg-white relative">
         <div class="flex flex-col relative">
           <img id="imgHospital" x-bind:src="'assets/img/rumah-sakit/' + dataRumahSakit1.data.id + '.jpg'" onerror="this.onerror=null; this.src='assets/img/rumah-sakit/default.jpg';return false;" style="height:250px;" width="100%" alt="">
@@ -30,7 +30,7 @@
             <p class="mt-4">
               <strong>Kamar tersedia</strong>
             </p>
-            <template x-for="abilityObj in dataRumahSakit1.data.bedDetail" :key="abilityObj.time">
+            <forEach="abilityObj in dataRumahSakit1.data.bedDetail" :key="abilityObj.time">
               <div class="bg-gray-100 p-4 mt-2">
                 <div class="flex flex-row justify-between">
                   <div class="text-left">
@@ -42,9 +42,9 @@
                   </div>
                 </div>
               </div>
-            </template>
+            </forEach>
           </div>
-    </template>
+    </if>
   </div>
 </div>
 <style>
