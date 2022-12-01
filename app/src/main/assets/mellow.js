@@ -51,6 +51,8 @@ function render(id, file, title = []) {
          document.getElementById(id).innerHTML = data.replaceAll('{{title}}', 'test')
          .replaceAll('<m-body>', '<div class="animate__animated animate__slideInRight animate__faster mx-auto max-w-[450px]"><div class="h-full bg-gray-50">')
          .replaceAll('</m-body>', '</div></div>')
+         .replaceAll('<nav-mobile', '<div x-html="header"')
+         .replaceAll('</nav-mobile>', '</div>')
          .replaceAll('<loading-circle></loading-circle>','<center><div class="loader_mini"></div></center>');
       };
       app.send();
@@ -116,17 +118,6 @@ class Http {
          if (this.readyState !== 4) return;
          if (this.status !== 200) return;
          document.getElementById(id).innerHTML = this.responseText;
-      };
-      app.send();
-   }
-
-   send_get(url) {
-      var app = new XMLHttpRequest();
-      app.open('GET', url, true);
-      app.onreadystatechange = function () {
-         if (this.readyState == 4 && this.status == 200) {
-            return this.responseText;
-         }
       };
       app.send();
    }

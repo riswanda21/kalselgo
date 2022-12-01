@@ -1,12 +1,12 @@
 <m-body>
-    <div x-data="template([
+    <nav-mobile x-data="template([
     {
       text: 'Harga Pangan',
       backgroundColor: 'bg-slate-50',
       textColor: 'text-slate-800'
     }
-  ])" x-html="header">
-    </div>
+  ])">
+    </nav-mobile>
     <div x-data="getHargaPangan()" x-init="fetchPangan()">
       <div class="">
         <section class="p-5">
