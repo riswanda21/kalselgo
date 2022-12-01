@@ -22,6 +22,14 @@ function router() {
       render('view', route.templateId, route.title);
    }
 }
+
+function template(data) {
+   let app = new App();
+   return {
+      header: app.setHeader(data)
+   };
+}
+
 window.addEventListener('hashchange', router);
 window.addEventListener('load', router);
 

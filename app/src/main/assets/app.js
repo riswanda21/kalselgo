@@ -71,13 +71,6 @@ function main() {
    };
 }
 
-function template(data) {
-   let app = new App();
-   return {
-      header: app.setHeader(data)
-   };
-}
-
 function getBMKG() {
    return {
       dataBMKG: null,
