@@ -1,4 +1,4 @@
-;route('/', 'home.html', [{'title':'Hello'}]);
+route('/', 'home.html', [{'title':'Hello'}]);
 route('/kesehatan', 'kesehatan.html');
 route('/pangan', 'pangan.html');
 route('/wisata', 'wisata.html');
@@ -11,16 +11,16 @@ function main() {
    let app = new App();
    var parameter = location.hash.split("/");
    if (parameter[1] == "kesehatan" && parameter[2]) {
-      parsedata.get('view', 'views/kesehatan.html');
+      render('view', 'kesehatan.html');
    }
    if (parameter[1] == "kesehatan-details" && parameter[2]) {
-      parsedata.get('view', 'views/kesehatan-view.html');
+      render('view', 'kesehatan-view.html');
    }
    if (parameter[1] == "wisata" && parameter[2]) {
-      parsedata.get('view', 'views/wisata.html');
+      render('view', 'wisata.html');
    }
    if (parameter[1] == "wisata-details" && parameter[2]) {
-      parsedata.get('view', 'views/wisata-view.html');
+      render('view', 'wisata-view.html');
    }
    return {
       title: "KalselGo",
