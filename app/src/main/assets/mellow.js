@@ -74,6 +74,14 @@ class App {
    constructor() {
       this.location = location.hash.slice(1);
    }
+
+   setParam(params, views) {
+      var parameter = location.hash.split("/");
+      if (parameter[1] == params && parameter[2]) {
+         render('root', views);
+      }
+   }
+   
    setTitle(name) {
       return document.title = name;
    }

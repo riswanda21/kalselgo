@@ -1,27 +1,16 @@
-route('/', 'home.html', [{'title':'Hello'}]);
+route('/', 'home.html');
 route('/kesehatan', 'kesehatan.html');
 route('/pangan', 'pangan.html');
 route('/wisata', 'wisata.html');
 route('/pendidikan', 'pendidikan.html');
 route('/bmkg', 'bmkg.html');
-var parameter = location.hash.split("/");
 
 function main() {
-   let parsedata = new Http();
    let app = new App();
-   var parameter = location.hash.split("/");
-   if (parameter[1] == "kesehatan" && parameter[2]) {
-      render('root', 'kesehatan.html');
-   }
-   if (parameter[1] == "kesehatan-details" && parameter[2]) {
-      render('root', 'kesehatan-view.html');
-   }
-   if (parameter[1] == "wisata" && parameter[2]) {
-      render('root', 'wisata.html');
-   }
-   if (parameter[1] == "wisata-details" && parameter[2]) {
-      render('root', 'wisata-view.html');
-   }
+   app.setParam('kesehatan', 'kesehatan.html');
+   app.setParam('kesehatan-details', 'kesehatan-view.html');
+   app.setParam('wisata', 'wisata.html');
+   app.setParam('wisata-details', 'wisata-view.html');
    return {
       title: "KalselGo",
       logo: "assets/img/logo2.png",
