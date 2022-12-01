@@ -1,6 +1,6 @@
-;route('/', 'home.html');
+;route('/', 'home.html', [{'title':'Hello'}]);
 route('/kesehatan', 'kesehatan.html');
-route('/pangan', 'pangan.html', 'Harga Pangan');
+route('/pangan', 'pangan.html');
 route('/wisata', 'wisata.html');
 route('/pendidikan', 'pendidikan.html');
 route('/bmkg', 'bmkg.html');

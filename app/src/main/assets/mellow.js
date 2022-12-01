@@ -29,7 +29,7 @@ window.addEventListener('load', router);
 /* Load Views Function 
  * This function for load and compile template
  */
-function render(id, file, title = 'Page') {
+function render(id, file, title = []) {
    var files = file.slice((Math.max(0, file.lastIndexOf(".")) || Infinity) + 1);
    if (files == "") {
       document.getElementById(id).innerHTML = file;
@@ -40,7 +40,9 @@ function render(id, file, title = 'Page') {
          if (this.readyState !== 4) return;
          if (this.status !== 200) return;
          var data = this.responseText;
-         document.getElementById(id).innerHTML = data.replace("{{title}}", title);
+         document.getElementById(id).innerHTML = data.replaceAll('{{title}}', 'test')
+         .replaceAll('<m-body>', '<div class="animate__animated animate__slideInRight animate__faster mx-auto max-w-[450px]"><div class="h-full bg-gray-50">')
+         .replaceAll('</m-body>', '</div></div>');
       };
       app.send();
    }
