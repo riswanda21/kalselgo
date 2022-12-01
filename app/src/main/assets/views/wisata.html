@@ -45,9 +45,7 @@
       </div>
       <section class="pt-1 pl-5 pr-5">
         <div x-show="isLoading">
-          <center>
-            <div class="loader_mini"></div>
-          </center>
+          <loading-circle></loading-circle>
         </div>
         <div class="space-y-2" x-show="open_data">
           <template x-for="wisata in dataWisata.wisata" :key="wisata.id">

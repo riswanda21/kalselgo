@@ -30,9 +30,7 @@
       </div>
       <section class="pl-5 pr-5 pt-1">
         <div x-show="isLoading">
-          <center>
-            <div class="loader_mini"></div>
-          </center>
+          <loading-circle></loading-circle>
         </div>
         <div clas s="space-y-2" x-show="open_data">
           <template x-for="pendidikan in dataSekolah.dataSekolah" :key="pendidikan.kode_prop">

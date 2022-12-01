@@ -15,11 +15,11 @@ function route(path, templateId, title) {
 var view = null;
 
 function router() {
-   view = view || document.getElementById('view');
+   view = view || document.getElementById('root');
    var url = location.hash.slice(1) || '/';
    var route = routes[url];
    if (view) {
-      render('view', route.templateId, route.title);
+      render('root', route.templateId, route.title);
    }
 }
 
@@ -50,7 +50,8 @@ function render(id, file, title = []) {
          var data = this.responseText;
          document.getElementById(id).innerHTML = data.replaceAll('{{title}}', 'test')
          .replaceAll('<m-body>', '<div class="animate__animated animate__slideInRight animate__faster mx-auto max-w-[450px]"><div class="h-full bg-gray-50">')
-         .replaceAll('</m-body>', '</div></div>');
+         .replaceAll('</m-body>', '</div></div>')
+         .replaceAll('<loading-circle></loading-circle>','<center><div class="loader_mini"></div></center>');
       };
       app.send();
    }

@@ -11,16 +11,16 @@ function main() {
    let app = new App();
    var parameter = location.hash.split("/");
    if (parameter[1] == "kesehatan" && parameter[2]) {
-      render('view', 'kesehatan.html');
+      render('root', 'kesehatan.html');
    }
    if (parameter[1] == "kesehatan-details" && parameter[2]) {
-      render('view', 'kesehatan-view.html');
+      render('root', 'kesehatan-view.html');
    }
    if (parameter[1] == "wisata" && parameter[2]) {
-      render('view', 'wisata.html');
+      render('root', 'wisata.html');
    }
    if (parameter[1] == "wisata-details" && parameter[2]) {
-      render('view', 'wisata-view.html');
+      render('root', 'wisata-view.html');
    }
    return {
       title: "KalselGo",

@@ -45,9 +45,7 @@ background-size: cover;background-image:url('assets/img/header-kesehatan.png');"
       </div>
       <section class="pl-5 pr-5 pt-1">
         <div x-show="isLoading">
-          <center>
-            <div class="loader_mini"></div>
-          </center>
+          <loading-circle></loading-circle>
         </div>
         <div class="space-y-2" x-show="open_data">
           <template x-for="rumahsakit in dataRumahSakit.hospitals" :key="rumahsakit.id">
