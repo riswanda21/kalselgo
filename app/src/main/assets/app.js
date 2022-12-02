@@ -5,8 +5,9 @@ route('/wisata', 'wisata.html');
 route('/pendidikan', 'pendidikan.html');
 route('/bmkg', 'bmkg.html', [{transition: 'slideInRight'}]);
 
-function main() {
+var Mellow = function () {
    let app = new App();
+   app.setTitle('KalselGo');
    app.setParam('kesehatan', 'kesehatan.html');
    app.setParam('kesehatan-details', 'kesehatan-view.html');
    app.setParam('wisata', 'wisata.html');
@@ -58,7 +59,7 @@ function main() {
          }
       ]
    };
-}
+};
 
 function getBMKG() {
    return {
@@ -241,4 +242,4 @@ function getWisataDetails() {
       },
    };
 }
-ready(main);
+ready(Mellow);

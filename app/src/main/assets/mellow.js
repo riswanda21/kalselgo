@@ -42,10 +42,16 @@ function render(id, file, title = [{}]) {
    if (files == "") {
       document.getElementById(id).innerHTML = file;
    } else {
+      var MellowSet = MellowSetting;
+      if (MellowSet[0].maxwidth == 'auto') {
+      var maxwidth = "";
+      }else{
+      var maxwidth = 'max-w-[' + MellowSet[0].maxwidth + ']';
+      }
       if (title[0].transition == null) {
-      var m_body = '<div class="mx-auto max-w-[450px]"><div class="h-full bg-gray-50">';
+      var m_body = '<div x-data="Mellow()" class="mx-auto ' + maxwidth + '"><div class="h-full bg-gray-50">';
       } else {
-      var m_body = '<div class="animate__animated animate__' + title[0].transition + ' animate__faster mx-auto max-w-[450px]"><div class="h-full bg-gray-50">';
+      var m_body = '<div x-data="Mellow()" class="animate__animated animate__' + title[0].transition + ' animate__faster mx-auto ' + maxwidth + '"><div class="h-full bg-gray-50">';
       }
       var app = new XMLHttpRequest();
       app.open('GET', path + '/' + file, true);
